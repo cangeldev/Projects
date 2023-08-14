@@ -2,7 +2,7 @@ import { View, Text, Alert } from 'react-native'
 import React, { useState } from 'react'
 import style from './style'
 import { CustomInput } from '../components/customInput/customInput'
-import { CustomButton } from '../customButton/customButton'
+import { CustomButton } from '../components/customButton/customButton'
 import axios from 'axios'
 
 export const AddProductPage = () => {
