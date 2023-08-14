@@ -16,11 +16,5 @@ export default StyleSheet.create({
         justifyContent: "space-around",
         marginBottom: 4,
         marginHorizontal: 20
-    },
-    products: {
-        fontSize: 20
-    },
-    highPriceStyle: {
-        color: "red"
     }
 })

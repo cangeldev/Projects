@@ -2,6 +2,7 @@ import { View, Text, FlatList, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import style from './style'
 import axios from 'axios'
+import { CustomText } from '../components/customText/customText'
 
 export const ProductListPage = () => {
 
@@ -18,15 +19,18 @@ export const ProductListPage = () => {
 
     const renderProducts = ({ item }: any) =>
         <View style={style.productsListView}>
-               <Text style={[style.products, item.price > 50 ? style.highPriceStyle : null]}>
-                {item.productName}
-            </Text>
-            <Text style={[style.products, item.price > 50 ? style.highPriceStyle : null]}>
-                {item.price}
-            </Text>
-            <Text style={[style.products, item.price > 50 ? style.highPriceStyle : null]}>
-                {item.stock}
-            </Text>
+            <CustomText
+                price={item.price}
+                text={item.productName}
+            />
+            <CustomText
+                price={item.price}
+                text={item.price}
+            />
+            <CustomText
+                price={item.price}
+                text={item.stock}
+            />
         </View>
 
     return (
