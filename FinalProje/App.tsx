@@ -4,7 +4,7 @@ import { CustomHeader } from './src/components/customHeader/customHeader'
 
 const App = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1 ,backgroundColor:"white"}}>
       <CustomHeader />
     </View>
   )

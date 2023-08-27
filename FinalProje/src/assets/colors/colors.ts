@@ -3,6 +3,10 @@ export default {
     white: "#fff",
     red: "#FF0000",
     orange: "#f99935",
-    placeholderTextColor:"#B9BABC",
+    placeholderTextColor:"#7A7D82",
+    dividerColor:"#EFEFEF",
+    txtInputBackGround: "#EFF4FA",
+    txtInputIconColor:  "#41464A",
+    headerButtonColor:"#4A6695"
     
 }
