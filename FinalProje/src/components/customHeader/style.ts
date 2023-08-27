@@ -2,8 +2,6 @@ import { StyleSheet } from "react-native";
 import colors from "../../assets/colors/colors";
 export default StyleSheet.create({
     container: {
-        backgroundColor: colors.white,
-        height: 250,
         paddingVertical: 15
     },
     headerTitle: {
@@ -13,14 +11,16 @@ export default StyleSheet.create({
         color: colors.black
     },
     divider: {
-        borderBottomColor:"#EFEFEF",
+        borderBottomColor: "#EFEFEF",
         borderBottomWidth: 1.5,
         marginVertical: 10
     },
     txtInput: {
         backgroundColor: "#f1f2f4",
         marginHorizontal: 20,
-        borderRadius: 5
+        borderRadius: 5,
+        paddingHorizontal: 35,
+        fontSize: 16
     },
     buttonText: {
         borderWidth: 2,
@@ -37,5 +37,24 @@ export default StyleSheet.create({
         marginTop: 8,
         paddingHorizontal: 20,
         alignItems: "center"
+    },
+    searchIcon: {
+        fontSize: 25,
+        position: "absolute",
+        left: 25,
+        color: "#2c2d2f"
+    },
+    sortIcon: {
+        fontSize: 25,
+        position: "absolute",
+        right: 25,
+        color: "#2c2d2f"
+    },
+    logoutIcon:{
+        fontSize: 20,
+        position: "absolute",
+        right: 15,
+        color: colors.black,
+        top:20
     }
 })
