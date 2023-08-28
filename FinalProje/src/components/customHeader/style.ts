@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import colors from "../../assets/colors/colors";
 export default StyleSheet.create({
     container: {
-        paddingVertical: 15,
+        paddingVertical: 10,
     },
     headerTitle: {
         fontSize: 24,
@@ -17,7 +17,7 @@ export default StyleSheet.create({
     },
     txtInputView: {
         justifyContent: "center",
-        marginTop: 5
+        marginTop: 2
     },
     txtInput: {
         backgroundColor: colors.txtInputBackGround,
@@ -40,7 +40,7 @@ export default StyleSheet.create({
     filterView: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop: 8,
+        marginTop: 5,
         paddingHorizontal: 20,
         alignItems: "center"
     },
@@ -65,6 +65,5 @@ export default StyleSheet.create({
     },
     activityCountText: {
         color: colors.black,
-        fontSize: 11
     }
 })

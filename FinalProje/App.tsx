@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { CustomHeader } from './src/components/customHeader/customHeader'
+import { CustomHeader, SlaytSlider } from './src/components'
 
 const App = () => {
   return (
-    <View style={{ flex: 1 ,backgroundColor:"white"}}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <CustomHeader />
+      <SlaytSlider />
     </View>
   )
 }
