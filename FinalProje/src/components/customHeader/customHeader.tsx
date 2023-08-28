@@ -13,13 +13,15 @@ export const CustomHeader = () => {
                 backgroundColor={colors.white}
                 barStyle={"dark-content"}
             />
-            <Text style={style.headerTitle}>
-                Etkinlik
-            </Text>
-            <IconE
-                name="log-out"
-                style={style.logoutIcon}
-            />
+            <View style={style.headerView}>
+                <Text style={style.headerTitle}>
+                    Etkinlik
+                </Text>
+                <IconE
+                    name="log-out"
+                    style={style.logoutIcon}
+                />
+            </View>
             <View style={style.divider} />
             <View style={style.txtInputView}>
                 <TextInput

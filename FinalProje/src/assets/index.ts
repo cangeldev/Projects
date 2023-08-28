@@ -1,0 +1,1 @@
+export const Muze = require("./images/muze.jpg");

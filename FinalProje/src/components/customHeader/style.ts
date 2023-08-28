@@ -2,7 +2,10 @@ import { StyleSheet } from "react-native";
 import colors from "../../assets/colors/colors";
 export default StyleSheet.create({
     container: {
-        paddingVertical: 10,
+        paddingTop: 5,
+    },
+    headerView: {
+        justifyContent: "center",
     },
     headerTitle: {
         fontSize: 24,
@@ -40,9 +43,8 @@ export default StyleSheet.create({
     filterView: {
         flexDirection: "row",
         justifyContent: "space-between",
-        marginTop: 5,
+        marginVertical: 8,
         paddingHorizontal: 20,
-        alignItems: "center"
     },
     searchIcon: {
         fontSize: 23,
@@ -60,10 +62,10 @@ export default StyleSheet.create({
         fontSize: 20,
         position: "absolute",
         right: 15,
-        color: colors.black,
-        top: 20
+        color: colors.black
     },
     activityCountText: {
         color: colors.black,
+        fontSize:16
     }
 })

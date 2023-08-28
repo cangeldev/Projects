@@ -17,7 +17,8 @@ export const SlaytSlider = () => {
         onItemChanged={() => null}
         onClick={() => null}
         preview={false}
-        showIndicator={false}
+        indicatorContainerStyle={style.indicatorContainerStyle}
+        activeIndicatorStyle={style.activeIndicatorStyle}
         caroselImageContainerStyle={style.caroselImageContainerStyle}
         caroselImageStyle={style.caroselImageStyle}
       />

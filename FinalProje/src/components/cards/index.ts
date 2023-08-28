@@ -1,0 +1,1 @@
+export { EventsCard } from "./eventsCard/index"
