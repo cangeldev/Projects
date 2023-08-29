@@ -1,12 +1,19 @@
-import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native'
-import React from 'react'
-import style from './style'
-import colors from '../../assets/colors/colors'
+import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native';
+import React, { useState } from 'react';
+import style from './style';
+import colors from '../../assets/colors/colors';
 import IconI from 'react-native-vector-icons/dist/Ionicons';
 import IconO from 'react-native-vector-icons/dist/Octicons';
 import IconE from 'react-native-vector-icons/dist/Entypo';
+import { FilterModal } from '../filterModal';
 
 export const CustomHeader = () => {
+    const [isFilterModalVisible, setIsFilterModalVisible] = useState(false);
+
+    const toggleFilterModal = () => {
+        setIsFilterModalVisible(!isFilterModalVisible);
+    };
+
     return (
         <View style={style.container}>
             <StatusBar
@@ -42,12 +49,16 @@ export const CustomHeader = () => {
                 <Text style={style.activityCountText}>
                     120 Etkinlik Bulundu
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={toggleFilterModal}>
                     <Text style={style.buttonText}>
                         Filtre
                     </Text>
                 </TouchableOpacity>
             </View>
+            <FilterModal
+                visibleModal={isFilterModalVisible}
+                closeModal={toggleFilterModal}
+            />
         </View>
-    )
-}
+    );
+};
