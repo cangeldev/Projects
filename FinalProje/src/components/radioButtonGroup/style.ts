@@ -1,5 +1,6 @@
-import { StyleSheet } from "react-native";
-import colors from "../../assets/colors/colors";
+import { StyleSheet } from "react-native"
+import colors from "../../assets/colors/colors"
+
 export default StyleSheet.create({
     container: {
         alignItems: "flex-start",
@@ -14,8 +15,6 @@ export default StyleSheet.create({
         paddingBottom: 5
     },
     containerStyle: {
-        alignItems: "flex-start",
-  
+        alignItems: "flex-start"
     }
-
 })

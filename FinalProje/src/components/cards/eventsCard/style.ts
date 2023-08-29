@@ -1,7 +1,9 @@
 import { StyleSheet, Dimensions } from "react-native"
 import colors from "../../../assets/colors/colors"
+
 const windowHeight = Dimensions.get('window').height
 const windowWidth = Dimensions.get('window').width
+
 export default StyleSheet.create({
     container: {
         marginHorizontal: 15,
@@ -13,10 +15,14 @@ export default StyleSheet.create({
         elevation: 1.5,
         paddingBottom: 10
     },
-    image: {
-        backgroundColor: "yellow",
-        width: windowWidth,
+    imageView: {
+        width: "100%",
         height: windowHeight / 5.3
+    },
+    image: {
+        width: "100%",
+        height: "100%",
+        resizeMode: "stretch"
 
     },
     infoView: {
@@ -35,7 +41,7 @@ export default StyleSheet.create({
         fontSize: 18,
         color: colors.black,
         fontWeight: "bold",
-        width: windowWidth / 1.6,
+        width: windowWidth / 1.6
     },
     price: {
         marginVertical: 5,
@@ -45,7 +51,7 @@ export default StyleSheet.create({
     },
     adress: {
         color: colors.placeholderTextColor,
-        width: windowWidth / 1.6,
+        width: windowWidth / 1.6
     },
     button: {
         backgroundColor: colors.headerButtonColor,

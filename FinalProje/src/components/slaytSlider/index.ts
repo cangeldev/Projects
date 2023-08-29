@@ -1,1 +1,1 @@
-export {SlaytSlider} from "./slaytSlider"
+export { SlaytSlider } from "./slaytSlider"

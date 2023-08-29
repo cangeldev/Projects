@@ -1,13 +1,12 @@
-import { View, Text, Modal, TouchableOpacity, Pressable } from 'react-native';
-import React, { FC } from 'react';
-import style from './style';
-import { RadioButtonGroup } from '../radioButtonGroup';
-import colors from '../../assets/colors/colors';
-import IconI from 'react-native-vector-icons/dist/AntDesign';
+import { View, Text, Modal, Pressable } from 'react-native'
+import React, { FC } from 'react'
+import style from './style'
+import { RadioButtonGroup } from '../radioButtonGroup'
+import IconI from 'react-native-vector-icons/dist/AntDesign'
 
 interface IFilterModal {
-    visibleModal: boolean;
-    closeModal: () => void;
+    visibleModal: boolean
+    closeModal: () => void
 }
 
 export const FilterModal: FC<IFilterModal> = ({ visibleModal, closeModal }) => {
@@ -27,15 +26,12 @@ export const FilterModal: FC<IFilterModal> = ({ visibleModal, closeModal }) => {
                         />
                     </Pressable>
                     <RadioButtonGroup />
-
                     <Pressable onPress={() => console.log("first")}>
                         <Text style={style.listButtonText}>
                             LİSTELE
                         </Text>
                     </Pressable>
-
                 </View>
-
             </View>
         </Modal>
     );

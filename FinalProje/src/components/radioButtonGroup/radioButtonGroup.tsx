@@ -1,9 +1,8 @@
 import { View, Text } from 'react-native'
 import React, { useMemo, useState } from 'react'
-import RadioGroup, { RadioButtonProps } from 'react-native-radio-buttons-group';
-import style from './style';
-import colors from '../../assets/colors/colors';
-
+import RadioGroup, { RadioButtonProps } from 'react-native-radio-buttons-group'
+import style from './style'
+import colors from '../../assets/colors/colors'
 
 export const RadioButtonGroup = () => {
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
@@ -17,7 +16,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
 
             }
         },
@@ -30,7 +29,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
 
         },
@@ -43,7 +42,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
         },
         {
@@ -55,7 +54,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
         },
         {
@@ -67,7 +66,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
         },
         {
@@ -79,7 +78,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
         },
         {
@@ -91,7 +90,7 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
         },
         {
@@ -103,12 +102,11 @@ export const RadioButtonGroup = () => {
             labelStyle: {
                 color: colors.black,
                 marginLeft: 15,
-                fontSize:17
+                fontSize: 17
             }
         },
-    ]), []);
-    const [selectedId, setSelectedId] = useState<string | undefined>();
-
+    ]), [])
+    const [selectedId, setSelectedId] = useState<string | undefined>()
     return (
         <View style={style.container}>
             <Text style={style.titleText}>

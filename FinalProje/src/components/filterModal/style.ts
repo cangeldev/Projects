@@ -1,5 +1,8 @@
-import { StyleSheet } from "react-native";
-import colors from "../../assets/colors/colors";
+import { StyleSheet, Dimensions } from "react-native"
+import colors from "../../assets/colors/colors"
+
+const windowWidth = Dimensions.get('window').width
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -8,10 +11,9 @@ export default StyleSheet.create({
         backgroundColor: 'rgba(52, 52, 52, 0.7)'
     },
     innerContainer: {
-        backgroundColor: "white",
+        backgroundColor: colors.white,
         borderRadius: 3,
-        width: 300,
-
+        width: windowWidth / 1.3
     },
     closeIcon: {
         fontSize: 24,
@@ -31,5 +33,4 @@ export default StyleSheet.create({
         backgroundColor: colors.headerButtonColor,
         color: colors.white
     }
-
 })

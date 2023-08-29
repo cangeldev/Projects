@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import colors from "../../assets/colors/colors";
 export default StyleSheet.create({
+
     container: {
         paddingTop: 5,
     },
@@ -44,7 +45,7 @@ export default StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginVertical: 8,
-        paddingHorizontal: 20,
+        paddingHorizontal: 20
     },
     searchIcon: {
         fontSize: 23,
@@ -66,6 +67,6 @@ export default StyleSheet.create({
     },
     activityCountText: {
         color: colors.black,
-        fontSize:16
+        fontSize: 16
     }
 })
