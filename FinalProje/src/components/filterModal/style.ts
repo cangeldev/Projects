@@ -11,17 +11,25 @@ export default StyleSheet.create({
         backgroundColor: "white",
         borderRadius: 3,
         width: 300,
-        height: 550,
-        padding: 15
+
     },
-    titleText: {
-        fontSize: 17,
+    closeIcon: {
+        fontSize: 24,
+        color: colors.headerButtonColor,
+        position: "absolute",
+        right: 15,
+        top: 20
+    },
+    listButtonText: {
+        paddingVertical: 10,
+        paddingHorizontal: 30,
+        marginBottom: 15,
+        marginTop: 5,
         fontWeight: "700",
-        color: colors.black
-    },
-    closeText: {
-        fontSize: 16,
-        color: colors.red
+        borderRadius: 5,
+        alignSelf: "center",
+        backgroundColor: colors.headerButtonColor,
+        color: colors.white
     }
 
 })

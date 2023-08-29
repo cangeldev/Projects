@@ -7,6 +7,7 @@ export default {
     dividerColor:"#EFEFEF",
     txtInputBackGround: "#EFF4FA",
     txtInputIconColor:  "#41464A",
-    headerButtonColor:"#4A6695"
+    headerButtonColor:"#4A6695",
+    radioButtonColor:"#D7006D"
     
 }
