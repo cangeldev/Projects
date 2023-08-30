@@ -17,8 +17,8 @@ export const CustomHeader = () => {
     return (
         <View style={style.container}>
             <StatusBar
-                backgroundColor={colors.white}
-                barStyle={"dark-content"}
+                backgroundColor={colors.black}
+                barStyle={"light-content"}
             />
             <View style={style.headerView}>
                 <Text style={style.headerTitle}>
