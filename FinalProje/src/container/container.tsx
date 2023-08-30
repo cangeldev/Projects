@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import colors from '../assets/colors/colors'
-import { HomeScreen } from '../screens'
+import { EventDetailScreen, HomeScreen } from '../screens'
 import IconE from 'react-native-vector-icons/dist/Entypo'
 
 export const Container = () => {
@@ -35,6 +35,21 @@ export const Container = () => {
                     }}
                     name='HomeScreen'
                     component={HomeScreen}
+                />
+                <Stack.Screen
+                    options={{
+                        headerTitleAlign: "center",
+                        headerTitle: "EtkinlikDetail",
+                        statusBarColor: colors.white,
+                        statusBarStyle: "dark",
+                        headerTitleStyle: {
+                            color: colors.black,
+                            fontSize: 24,
+                            fontWeight: "700"
+                        }
+                    }}
+                    name='EventDetailScreen'
+                    component={EventDetailScreen}
                 />
             </Stack.Navigator>
         </NavigationContainer>

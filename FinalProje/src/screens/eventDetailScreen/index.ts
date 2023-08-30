@@ -1,0 +1,1 @@
+export { EventDetailScreen } from "./eventDetailScreen"
