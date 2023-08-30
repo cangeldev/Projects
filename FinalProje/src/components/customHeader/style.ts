@@ -5,23 +5,9 @@ export default StyleSheet.create({
     container: {
         paddingTop: 5,
     },
-    headerView: {
-        justifyContent: "center",
-    },
-    headerTitle: {
-        fontSize: 24,
-        fontWeight: "bold",
-        alignSelf: "center",
-        color: colors.black
-    },
-    divider: {
-        borderBottomColor: colors.dividerColor,
-        borderBottomWidth: 1.5,
-        marginVertical: 10
-    },
     txtInputView: {
         justifyContent: "center",
-        marginTop: 2
+        marginTop: 10
     },
     txtInput: {
         backgroundColor: colors.txtInputBackGround,
@@ -45,7 +31,8 @@ export default StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         marginVertical: 8,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        alignItems: "center"
     },
     searchIcon: {
         fontSize: 23,
@@ -58,12 +45,6 @@ export default StyleSheet.create({
         position: "absolute",
         right: 26,
         color: colors.txtInputIconColor
-    },
-    logoutIcon: {
-        fontSize: 20,
-        position: "absolute",
-        right: 15,
-        color: colors.black
     },
     activityCountText: {
         color: colors.black,

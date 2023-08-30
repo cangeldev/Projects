@@ -1,16 +1,41 @@
-import { View, Text } from 'react-native'
+import { View, BackHandler } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { HomeScreen } from '../homeScreen/homeScreen'
 import colors from '../assets/colors/colors'
-colors
+import { HomeScreen } from '../screens'
+import IconE from 'react-native-vector-icons/dist/Entypo'
+
 export const Container = () => {
+
     const Stack = createNativeStackNavigator()
+
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{ headerShown: false,}}>
-                <Stack.Screen  options={{statusBarColor:colors.red}} name='HomeScreen' component={HomeScreen} />
+            <Stack.Navigator>
+                <Stack.Screen
+                    options={{
+                        headerTitleAlign: "center",
+                        headerTitle: "Etkinlik",
+                        statusBarColor: colors.white,
+                        statusBarStyle: "dark",
+                        headerRight: () =>
+                            <IconE
+                                name="log-out"
+                                size={20}
+                                color={colors.black}
+                                onPress={() => BackHandler.exitApp()}
+
+                            />,
+                        headerTitleStyle: {
+                            color: colors.black,
+                            fontSize: 24,
+                            fontWeight: "700"
+                        }
+                    }}
+                    name='HomeScreen'
+                    component={HomeScreen}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     )

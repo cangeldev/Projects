@@ -1,10 +1,9 @@
-import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
 import style from './style'
 import colors from '../../assets/colors/colors'
 import IconI from 'react-native-vector-icons/dist/Ionicons'
 import IconO from 'react-native-vector-icons/dist/Octicons'
-import IconE from 'react-native-vector-icons/dist/Entypo'
 import { FilterModal } from '../filterModal'
 
 export const CustomHeader = () => {
@@ -16,20 +15,6 @@ export const CustomHeader = () => {
 
     return (
         <View style={style.container}>
-            <StatusBar
-                backgroundColor={colors.black}
-                barStyle={"light-content"}
-            />
-            <View style={style.headerView}>
-                <Text style={style.headerTitle}>
-                    Etkinlik
-                </Text>
-                <IconE
-                    name="log-out"
-                    style={style.logoutIcon}
-                />
-            </View>
-            <View style={style.divider} />
             <View style={style.txtInputView}>
                 <TextInput
                     placeholder='Etkinlik veya konser arayın'
@@ -49,11 +34,11 @@ export const CustomHeader = () => {
                 <Text style={style.activityCountText}>
                     120 Etkinlik Bulundu
                 </Text>
-                <TouchableOpacity onPress={toggleFilterModal}>
+                <Pressable onPress={toggleFilterModal}>
                     <Text style={style.buttonText}>
                         Filtre
                     </Text>
-                </TouchableOpacity>
+                </Pressable>
             </View>
             <FilterModal
                 visibleModal={isFilterModalVisible}
