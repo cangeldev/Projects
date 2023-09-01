@@ -10,5 +10,12 @@ export default StyleSheet.create({
         fontWeight: "bold",
         color: "black",
         fontSize: 25
+    },
+    sliderView:
+    {
+        marginHorizontal: 26,
+        overflow: 'hidden',
+        borderRadius: 6,
+        marginBottom: 5,
     }
 })

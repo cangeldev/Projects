@@ -38,10 +38,10 @@ export const Container = () => {
                 />
                 <Stack.Screen
                     options={{
-                        headerTitleAlign: "center",
-                        headerTitle: "EtkinlikDetail",
-                        statusBarColor: colors.white,
-                        statusBarStyle: "dark",
+                        statusBarTranslucent:true,
+                         headerShown:false,
+                        statusBarColor:"transparent",
+                        statusBarStyle: "light",
                         headerTitleStyle: {
                             color: colors.black,
                             fontSize: 24,

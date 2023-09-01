@@ -3,18 +3,13 @@ import colors from "../../assets/colors/colors"
 const windowHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
-    container: {
-        marginHorizontal: 26,
-        overflow: 'hidden',
-        borderRadius: 6,
-        marginBottom: 5,
-    },
-    caroselImageContainerStyle: {
-        height: windowHeight / 4.7,
-    },
-    caroselImageStyle: {
+    caroselImageHomeScreenStyle: {
         resizeMode: 'stretch',
         height: windowHeight / 4.7,
+    },
+    caroselImageDetailScreenStyle: {
+        resizeMode: 'stretch',
+        height: windowHeight / 2.2,
     },
     indicatorContainerStyle: {
         bottom: -20
