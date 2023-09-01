@@ -6,18 +6,20 @@ import { useNavigation } from '@react-navigation/native'
 interface IEventsCard {
     title: string
     price: string
-    date: string
+    eventStart: string
+    eventEnd: string
     adress: string
+    eventInfo: string
     posterImage: Image
 }
-export const EventsCard: FC<IEventsCard> = ({ title, price, date, adress, posterImage }) => {
+export const EventsCard: FC<IEventsCard> = ({ title, price, eventStart, eventEnd, adress, posterImage, eventInfo }) => {
 
     const navigation = useNavigation<any>()
 
     return (
         <Pressable
             onPress={() => navigation.navigate("EventDetailScreen",
-                { title: title, date: date, posterImage: posterImage, adress: adress })}>
+                { title: title, eventStart: eventStart, eventEnd: eventEnd, posterImage: posterImage, adress: adress, eventInfo: eventInfo })}>
             <View style={style.container}>
                 <View style={style.imageView}>
                     <Image

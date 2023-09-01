@@ -35,7 +35,8 @@ export default StyleSheet.create({
     infoText: {
         color: colors.black,
         fontSize: 13,
-        marginLeft: 4
+        marginLeft: 4,
+        marginHorizontal: 15
     },
     divider: {
         borderBottomColor: colors.dividerColor,

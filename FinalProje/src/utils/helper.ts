@@ -1,46 +1,32 @@
-import { Muze } from "../assets";
+import { GokhanOzen, YalinPoster } from "../assets";
 
 export const EventList = [
     {
         id: 1,
-        posterImage: Muze,
-        title: "BKM Yaz Etkinlikleri",
-        date: "17 Ağustos 2023, 18:00 - 17 Ağustos, 2023 23:00",
-        adress: " Alemdar Caddesi, Hacı Ahmet Sokak Düzce",
-        price: "650,00 TL"
+        posterImage: YalinPoster,
+        title: "Yalın - Unutulmaz Şarkılar",
+        eventStart: "15 Eylül 2023, 18:00",
+        eventEnd: "15 Eylül 2023, 23:00",
+        adress: "Alemdar Caddesi, Hacı Ahmet Sokak İzmir",
+        price: "650,00 TL",
+        place: "Efes Antik Tiyatro",
+        category: "Konser",
+        eventInfo: "Sevenlerinin kalbinde taht kuran ve seslendirdiği kendine özgü aşk şarkıları, büyüleyici sesi ve besteleri ile günümüze kadar milyonlarca dinleyici kitlesi yakalayan Yalın, sahnelerde fırtınalar estiren “Unutulmaz Şarkılar” konser serisine Efes Antik Tiyatro’da devam ediyor. Yalın, görkemli sahne tasarımı ve bigband orkestrasıyla hem kalbimizde iz bırakan “Unutulmaz Şarkılar”ı, hem de en sevilen hitlerini bu defa sanatın ve kültürün beşiği Efes Antik Tiyatro’da seslendirecek."
     },
     {
         id: 2,
-        posterImage: Muze,
-        title: "Düzce Yaz Etkinlikleri",
-        date: "17 Eylül 2023, 18:00 - 17 Eylül, 2023 23:00",
-        adress: "Hacı Ahmet  Caddesi, Alemdar Sokak Düzce",
-        price: "150,00 TL"
+        posterImage: GokhanOzen,
+        title: "Gökhan Özen",
+        eventStart: "1 Eylül 2023, 21:00",
+        eventEnd: "1 Eylül 2023, 23:00",
+        adress: "Ortaköy, Muallim Naci Cd. No:75, 34347 BEŞİKTAŞ / İstanbul",
+        price: "400,00 TL",
+        place: "Kuruçeşme Açıkhava",
+        category: "Konser",
+        eventInfo: "Poll Production birbirinden değerli sanatçıları müzikseverler ile buluşturmaya devam ediyor. Gökhan Özen, Paraf Kuruçeşme Açıkhava sahnesinde!"
     },
-    {
-        id: 3,
-        posterImage: Muze,
-        title: "Düzce Yaz Etkinlikleri",
-        date: "17 Eylül 2023, 18:00 - 17 Eylül, 2023 23:00",
-        adress: "Hacı Ahmet  Caddesi, Alemdar Sokak Düzce",
-        price: "150,00 TL"
-    },
-    {
-        id: 4,
-        posterImage: Muze,
-        title: "Düzce Yaz Etkinlikleri",
-        date: "17 Eylül 2023, 18:00 - 17 Eylül, 2023 23:00",
-        adress: "Hacı Ahmet  Caddesi, Alemdar Sokak Düzce",
-        price: "150,00 TL"
-    },
-    {
-        id: 5,
-        posterImage: Muze,
-        title: "Düzce Yaz Etkinlikleri",
-        date: "17 Eylül 2023, 18:00 - 17 Eylül, 2023 23:00",
-        adress: "Hacı Ahmet  Caddesi, Alemdar Sokak Düzce",
-        price: "150,00 TL"
-    },
+
+
 
 ]
 export const EventInfoRules = [

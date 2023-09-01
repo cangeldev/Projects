@@ -10,9 +10,11 @@ export const HomeScreen = () => {
         <>
             <CustomHeader />
             <View style={style.sliderView}>
-                <SlaytSlider  visibleInfo={true} />
+                <SlaytSlider visibleInfo={true} />
             </View>
-            <Text style={style.title}>Güncel Etkinlikler</Text>
+            <Text style={style.title}>
+                Güncel Etkinlikler
+            </Text>
         </>
     );
 
@@ -24,7 +26,9 @@ export const HomeScreen = () => {
                     <EventsCard
                         title={item.title}
                         adress={item.adress}
-                        date={item.date}
+                        eventStart={item.eventStart}
+                        eventEnd={item.eventEnd}
+                        eventInfo={item.eventInfo}
                         price={item.price}
                         posterImage={item.posterImage}
                     />}

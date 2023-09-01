@@ -8,15 +8,17 @@ import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 import { EventInfoRules } from '../../utils/helper'
 interface IEventDetailScreen {
     title: string,
-    date: string,
+    eventStart: string,
+    eventEnd: string,
     adress: string,
     posterImage: Image,
+    eventInfo: string,
 }
 
 export const EventDetailScreen: FC = () => {
     const navigation = useNavigation()
     const route = useRoute();
-    const { title, date, posterImage, adress } = route.params as IEventDetailScreen
+    const { title, eventStart, eventEnd, posterImage, adress, eventInfo } = route.params as IEventDetailScreen
     return (
 
         <View style={style.container}>
@@ -39,7 +41,7 @@ export const EventDetailScreen: FC = () => {
                             style={style.infoIcon}
                         />
                         <Text style={style.infoText}>
-                            {date}
+                            {eventStart} - {eventEnd}
                         </Text>
                     </View>
                     <View style={style.infoInnerView}>
@@ -79,12 +81,7 @@ export const EventDetailScreen: FC = () => {
                         Etkinlik Hakkında
                     </Text>
                     <Text style={style.eventInfoText} >
-                        Etkinlik Lorem ipsum dolor sit amet,
-                        consectetur adipisicing elit. Maiores,
-                        earum. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Qui consequuntur aperiam dolorem. Nostrum ea vel in praesentium quam
-                        quis provident debitis deserunt! Voluptatibus dicta, necessitatibus illum
-                        possimus sapiente vel nostrum.
+                        {eventInfo}
                     </Text>
                 </View>
                 <View style={style.divider} />
@@ -95,16 +92,18 @@ export const EventDetailScreen: FC = () => {
                     <FlatList
                         data={EventInfoRules}
                         renderItem={({ item }) =>
-                            <Text style={style.eventInfoText} >{item.text}</Text>}
+                            <Text style={style.eventInfoText} >
+                                {item.text}
+                            </Text>}
                     />
                 </View>
-                <View style={style.paddingView}/>
+                <View style={style.paddingView} />
             </ScrollView>
             <TouchableOpacity>
-                    <Text style={style.ticketButton}>
-                        Bilet Satın Al
-                    </Text>
-                </TouchableOpacity>
+                <Text style={style.ticketButton}>
+                    Bilet Satın Al
+                </Text>
+            </TouchableOpacity>
         </View>
     );
 }
