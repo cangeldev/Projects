@@ -1,4 +1,4 @@
-import { GokhanOzen, YalinPoster } from "../assets";
+import { Doksanlar, GokhanOzen, Manga, YalinPoster } from "../assets";
 
 export const EventList = [
     {
@@ -24,6 +24,30 @@ export const EventList = [
         place: "Kuruçeşme Açıkhava",
         category: "Konser",
         eventInfo: "Poll Production birbirinden değerli sanatçıları müzikseverler ile buluşturmaya devam ediyor. Gökhan Özen, Paraf Kuruçeşme Açıkhava sahnesinde!"
+    },
+    {
+        id: 3,
+        posterImage: Manga,
+        title: "maNga",
+        eventStart: "1 Eylül 2023, 21:00",
+        eventEnd: "1 Eylül 2023, 23:00",
+        adress: "Konyaaltı Sahil Şeridi Sahil Antalya Yaşam Parkı MURATPAŞA / Antalya",
+        price: "220,00 TL",
+        place: "Kuruçeşme Açıkhava",
+        category: "Konser",
+        eventInfo: "maNga, 1 Eylül Cuma akşamı Atlantis Yapım organizasyonu ile Antalya Açıkhava'da!"
+    },
+    {
+        id: 4,
+        posterImage: Doksanlar,
+        title: "Dj Fikret Kocamaz ile 90'lar & 2000'ler Türkçe Pop Parti",
+        eventStart: "1 Eylül 2023, 20:00",
+        eventEnd: "1 Eylül 2023, 24:00",
+        adress: "Cihannüma Mah. Has Fırın Cad. Akmaz Çeşme Sok. No:26 Beşiktaş (BKM Karşı Sokağı) BEŞİKTAŞ / İstanbul",
+        price: "100,00 TL",
+        place: "IF Performance Hall Beşiktaş",
+        category: "Konser",
+        eventInfo: "90'lar & 2000'ler Türkçe Pop Parti : Nez & Dj Fikret Kocamaz sizlerle.."
     },
 
 
