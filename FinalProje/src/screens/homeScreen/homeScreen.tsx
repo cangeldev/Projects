@@ -25,6 +25,7 @@ export const HomeScreen = () => {
                 renderItem={({ item }) =>
                     <EventsCard
                         title={item.title}
+                        place={item.place}
                         adress={item.adress}
                         eventStart={item.eventStart}
                         eventEnd={item.eventEnd}

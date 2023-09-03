@@ -6,19 +6,35 @@ import { SlaytSlider } from '../../components'
 import IconI from 'react-native-vector-icons/dist/Ionicons'
 import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 import { EventInfoRules } from '../../utils/helper'
+import Share from 'react-native-share'
+
 interface IEventDetailScreen {
-    title: string,
-    eventStart: string,
-    eventEnd: string,
-    adress: string,
-    posterImage: Image,
-    eventInfo: string,
+    title: string
+    place: string
+    price: string
+    eventStart: string
+    eventEnd: string
+    adress: string
+    posterImage: Image
+    eventInfo: string
 }
 
 export const EventDetailScreen: FC = () => {
     const navigation = useNavigation()
     const route = useRoute();
-    const { title, eventStart, eventEnd, posterImage, adress, eventInfo } = route.params as IEventDetailScreen
+    const { title, eventStart, place, eventEnd, price, posterImage, adress, eventInfo } = route.params as IEventDetailScreen
+    const shareButton = () => {
+        const options = {
+            message:
+                'Etkinlik: ' + title + "\n" +
+                "Mekan: " + place + "\n" +
+                "Konum: " + adress + "\n" +
+                "Fiyatı: " + price
+        }
+        Share.open(options)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
     return (
 
         <View style={style.container}>
@@ -30,6 +46,7 @@ export const EventDetailScreen: FC = () => {
                     style={[style.Icon, { left: 20 }]}
                 />
                 <IconI
+                    onPress={shareButton}
                     name="share-social"
                     style={[style.Icon, { right: 20 }]}
                 />
@@ -73,7 +90,6 @@ export const EventDetailScreen: FC = () => {
                             </Text>
                         </Pressable>
                     </View>
-
                 </View>
                 <View style={style.divider} />
                 <View style={style.eventInfoView}>
@@ -104,6 +120,7 @@ export const EventDetailScreen: FC = () => {
                     Bilet Satın Al
                 </Text>
             </TouchableOpacity>
+
         </View>
     );
 }
