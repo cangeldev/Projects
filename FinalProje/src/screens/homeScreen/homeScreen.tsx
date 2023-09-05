@@ -6,6 +6,7 @@ import style from './style';
 import { EventList } from '../../utils/helper';
 
 export const HomeScreen = () => {
+
     const renderHeader = () => (
         <>
             <CustomHeader />
@@ -17,25 +18,25 @@ export const HomeScreen = () => {
             </Text>
         </>
     );
-
+    const render =
+        (({ item }: any) =>
+            <EventsCard
+                title={item.title}
+                place={item.place}
+                adress={item.adress}
+                eventStart={item.eventStart}
+                eventEnd={item.eventEnd}
+                eventInfo={item.eventInfo}
+                price={item.price}
+                posterImage={item.posterImage}
+                visible={true}
+            />)
     return (
         <View style={style.container}>
             <FlatList
-               showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
                 data={EventList}
-                renderItem={({ item }) =>
-                    <EventsCard
-                        title={item.title}
-                        place={item.place}
-                        adress={item.adress}
-                        eventStart={item.eventStart}
-                        eventEnd={item.eventEnd}
-                        eventInfo={item.eventInfo}
-                        price={item.price}
-                        posterImage={item.posterImage}
-                        visible={true}
-                       
-                    />}
+                renderItem={render}
                 ListHeaderComponent={renderHeader}
             />
         </View>

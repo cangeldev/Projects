@@ -1,5 +1,5 @@
 import { View, Text, Image, ScrollView, FlatList, Pressable, TouchableOpacity } from 'react-native'
-import React, { FC } from 'react'
+import React from 'react'
 import style from './style'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { SlaytSlider } from '../../components'
@@ -7,34 +7,24 @@ import IconI from 'react-native-vector-icons/dist/Ionicons'
 import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 import { EventInfoRules } from '../../utils/helper'
 import Share from 'react-native-share'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../features/store'
 
-interface IEventDetailScreen {
-    title: string
-    place: string
-    price: string
-    eventStart: string
-    eventEnd: string
-    adress: string
-    posterImage: Image
-    eventInfo: string
-}
-
-export const EventDetailScreen: FC = () => {
+export const EventDetailScreen = () => {
     const navigation = useNavigation()
-    const route = useRoute();
-    const { title, eventStart, place, eventEnd, price, posterImage, adress, eventInfo } = route.params as IEventDetailScreen
-    const shareButton = () => {
+
+    const eventInfoAll = useSelector((state: RootState) => state.users.EventInfo);
+    const { title, adress, place, price, eventStart, eventEnd, eventInfo } = eventInfoAll;
+
+    const shareEvent = () => {
         const options = {
-            message:
-                'Etkinlik: ' + title + "\n" +
-                "Mekan: " + place + "\n" +
-                "Konum: " + adress + "\n" +
-                "Fiyatı: " + price
-        }
+            message: `Etkinlik: ${title}\nMekan: ${place}\nKonum: ${adress}\nFiyatı: ${price}`,
+        };
+
         Share.open(options)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-    }
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+    };
     return (
 
         <View style={style.container}>
@@ -46,12 +36,14 @@ export const EventDetailScreen: FC = () => {
                     style={[style.Icon, { left: 20 }]}
                 />
                 <IconI
-                    onPress={shareButton}
+                    onPress={shareEvent}
                     name="share-social"
                     style={[style.Icon, { right: 20 }]}
                 />
                 <View style={style.infoView}>
-                    <Text style={style.title}>{title}</Text>
+                    <Text style={style.title}>
+                        {title}
+                    </Text>
                     <View style={style.infoInnerView}>
                         <IconF
                             name="calendar-alt"

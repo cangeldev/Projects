@@ -3,6 +3,8 @@ import React, { FC } from 'react'
 import style from './style'
 import { useNavigation } from '@react-navigation/native'
 import IconF from 'react-native-vector-icons/dist/FontAwesome5'
+import { useDispatch } from 'react-redux'
+import { addAdrees, addEventEnd, addEventInfo, addEventStart, addPlace, addPrice, addTitle } from '../../../features/userSlice'
 
 interface IEventsCard {
     title: string
@@ -17,23 +19,23 @@ interface IEventsCard {
     posterImage: Image
 }
 export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
-
+    const dispatch = useDispatch()
+    
     const navigation = useNavigation<any>()
-
+    const toggleButton = () => {
+        navigation.navigate("EventDetailScreen")
+        dispatch(addTitle(title))
+        dispatch(addPlace(place))
+        dispatch(addPrice(price))
+        dispatch(addEventStart(eventStart))
+        dispatch(addEventEnd(eventEnd))
+        dispatch(addEventInfo(eventInfo))
+        dispatch(addAdrees(adress))
+    }
     return (
         <Pressable
             disabled={disabled}
-            onPress={() => navigation.navigate("EventDetailScreen",
-                {
-                    title: title,
-                    eventStart: eventStart,
-                    place: place,
-                    price: price,
-                    eventEnd: eventEnd,
-                    posterImage: posterImage,
-                    adress: adress,
-                    eventInfo: eventInfo
-                })}>
+            onPress={toggleButton}>
             <View style={style.container}>
                 <View style={style.imageView}>
                     <Image
@@ -64,23 +66,23 @@ export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, e
                                 </Text>
                             </Pressable> :
                             null
-                    }              
+                    }
 
 
                 </View>
                 {
-                        visible == false ?
-                            <View style={style.infoDateView}>
-                                <IconF
-                                    name="calendar-alt"
-                                    style={style.infoIcon}
-                                />
-                                <Text style={style.infoText}>
-                                    {eventStart} - {eventEnd}
-                                </Text>
-                            </View> :
-                            null
-                    }
+                    visible == false ?
+                        <View style={style.infoDateView}>
+                            <IconF
+                                name="calendar-alt"
+                                style={style.infoIcon}
+                            />
+                            <Text style={style.infoText}>
+                                {eventStart} - {eventEnd}
+                            </Text>
+                        </View> :
+                        null
+                }
             </View>
         </Pressable>
     )
