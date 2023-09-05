@@ -2,6 +2,7 @@ import { View, Text, Image, Pressable } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 import { useNavigation } from '@react-navigation/native'
+import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 
 interface IEventsCard {
     title: string
@@ -11,14 +12,17 @@ interface IEventsCard {
     eventEnd: string
     adress: string
     eventInfo: string
+    visible?: boolean
+    disabled?: boolean
     posterImage: Image
 }
-export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, eventEnd, adress, posterImage, eventInfo }) => {
+export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
 
     const navigation = useNavigation<any>()
 
     return (
         <Pressable
+            disabled={disabled}
             onPress={() => navigation.navigate("EventDetailScreen",
                 {
                     title: title,
@@ -41,20 +45,42 @@ export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, e
                     <Text numberOfLines={1} style={style.title}>
                         {title}
                     </Text>
-                    <Text style={style.price}>
-                        {price}
-                    </Text>
+                    {
+                        visible == true ?
+                            <Text style={style.price}>
+                                {price}
+                            </Text> : null
+                    }
                 </View>
                 <View style={style.infoInnerView}>
                     <Text numberOfLines={2} style={style.adress}>
                         {adress}
                     </Text>
-                    <Pressable>
-                        <Text style={style.button}>
-                            SATIN AL
-                        </Text>
-                    </Pressable>
+                    {
+                        visible == true ?
+                            <Pressable>
+                                <Text style={style.button}>
+                                    SATIN AL
+                                </Text>
+                            </Pressable> :
+                            null
+                    }              
+
+
                 </View>
+                {
+                        visible == false ?
+                            <View style={style.infoDateView}>
+                                <IconF
+                                    name="calendar-alt"
+                                    style={style.infoIcon}
+                                />
+                                <Text style={style.infoText}>
+                                    {eventStart} - {eventEnd}
+                                </Text>
+                            </View> :
+                            null
+                    }
             </View>
         </Pressable>
     )

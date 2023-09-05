@@ -27,6 +27,18 @@ export default StyleSheet.create({
         textAlign: "center",
         textAlignVertical: "center"
     },
+    historyButton: {
+        borderWidth: 2.5,
+        padding: 5,
+        borderRadius: 5,
+        paddingHorizontal: 8,      
+        borderColor: colors.headerButtonColor,
+        color: colors.headerButtonColor,
+        textAlign: "center",
+        textAlignVertical: "center",
+        fontSize:18,
+        marginRight:10
+    },
     filterView: {
         flexDirection: "row",
         justifyContent: "space-between",

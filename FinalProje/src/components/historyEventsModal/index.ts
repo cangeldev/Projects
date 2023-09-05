@@ -1,0 +1,1 @@
+export { HistoryEventsModal } from "./historyEventsModal"

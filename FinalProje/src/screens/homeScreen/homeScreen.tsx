@@ -21,6 +21,7 @@ export const HomeScreen = () => {
     return (
         <View style={style.container}>
             <FlatList
+               showsVerticalScrollIndicator={false}
                 data={EventList}
                 renderItem={({ item }) =>
                     <EventsCard
@@ -32,6 +33,8 @@ export const HomeScreen = () => {
                         eventInfo={item.eventInfo}
                         price={item.price}
                         posterImage={item.posterImage}
+                        visible={true}
+                       
                     />}
                 ListHeaderComponent={renderHeader}
             />

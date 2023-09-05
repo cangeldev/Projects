@@ -4,13 +4,18 @@ import style from './style'
 import colors from '../../assets/colors/colors'
 import IconI from 'react-native-vector-icons/dist/Ionicons'
 import IconO from 'react-native-vector-icons/dist/Octicons'
+import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 import { FilterModal } from '../filterModal'
-
+import { HistoryEventsModal } from '../historyEventsModal/historyEventsModal'
 export const CustomHeader = () => {
 
     const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
+    const [isHistoryModalVisible, setIsHistoryModalVisible] = useState(false)
     const toggleFilterModal = () => {
         setIsFilterModalVisible(!isFilterModalVisible)
+    }
+    const toggleHistoryModal = () => {
+        setIsHistoryModalVisible(!isHistoryModalVisible)
     }
 
     return (
@@ -32,17 +37,30 @@ export const CustomHeader = () => {
             </View>
             <View style={style.filterView}>
                 <Text style={style.activityCountText}>
-                    120 Etkinlik Bulundu
+                    12 Etkinlik Bulundu
                 </Text>
-                <Pressable onPress={toggleFilterModal}>
-                    <Text style={style.buttonText}>
-                        Filtre
-                    </Text>
-                </Pressable>
+
+                <View style={{ flexDirection: "row" }}>
+                    <Pressable onPress={toggleHistoryModal}>
+                        <IconF
+                            name="history"
+                            style={style.historyButton}
+                        />
+                    </Pressable>
+                    <Pressable onPress={toggleFilterModal}>
+                        <Text style={style.buttonText}>
+                            Filtre
+                        </Text>
+                    </Pressable>
+                </View>
             </View>
             <FilterModal
                 visibleModal={isFilterModalVisible}
                 closeModal={toggleFilterModal}
+            />
+            <HistoryEventsModal
+                visibleModal={isHistoryModalVisible}
+                closeModal={toggleHistoryModal}
             />
         </View>
     )

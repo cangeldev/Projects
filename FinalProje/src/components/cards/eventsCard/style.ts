@@ -60,5 +60,21 @@ export default StyleSheet.create({
         borderRadius: 7,
         color: colors.white,
         fontWeight: "bold"
-    }
+    },
+    infoIcon: {
+        fontSize: 20,
+        color: colors.black,
+    },
+    infoText: {
+        color: colors.black,
+        fontSize: 13,
+        marginLeft: 4,
+        marginHorizontal: 15
+    },
+    infoDateView: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginHorizontal:15,
+        marginTop:6
+    },
 })
