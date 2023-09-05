@@ -11,9 +11,10 @@ import Share from 'react-native-share'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../features/store'
 import { MapModal } from '../../components/mapModal'
+import { SelectedPlaceInfoScreen } from '../selectedPlaceInfoScreen'
 
 export const EventDetailScreen = () => {
-    const navigation = useNavigation()
+    const navigation = useNavigation<any>()
     const [isMapModalVisible, setIsMapModalVisible] = useState(false)
     const toggleMapModal = () => {
         setIsMapModalVisible(!isMapModalVisible)
@@ -69,7 +70,8 @@ export const EventDetailScreen = () => {
                         </Text>
                     </View>
                     <View style={style.mapView}>
-                        <Pressable                           
+                        <Pressable
+                            onPress={() =>  navigation.navigate(SelectedPlaceInfoScreen)}
                             style={style.mapButton}>
                             <IconE
                                 name="search"
@@ -80,8 +82,8 @@ export const EventDetailScreen = () => {
                             </Text>
                         </Pressable>
                         <Pressable
-                         onPress={toggleMapModal}
-                         style={style.mapButton}>
+                            onPress={toggleMapModal}
+                            style={style.mapButton}>
                             <IconF
                                 name="map-marked-alt"
                                 style={style.mapIcon}

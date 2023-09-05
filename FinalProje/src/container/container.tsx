@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import colors from '../assets/colors/colors'
-import { EventDetailScreen, HomeScreen } from '../screens'
+import { EventDetailScreen, HomeScreen, SelectedPlaceInfoScreen } from '../screens'
 import IconE from 'react-native-vector-icons/dist/Entypo'
 
 export const Container = () => {
@@ -38,9 +38,9 @@ export const Container = () => {
                 />
                 <Stack.Screen
                     options={{
-                        statusBarTranslucent:true,
-                         headerShown:false,
-                        statusBarColor:"transparent",
+                        statusBarTranslucent: true,
+                        headerShown: false,
+                        statusBarColor: "transparent",
                         statusBarStyle: "light",
                         headerTitleStyle: {
                             color: colors.black,
@@ -50,6 +50,21 @@ export const Container = () => {
                     }}
                     name='EventDetailScreen'
                     component={EventDetailScreen}
+                />
+                <Stack.Screen
+                    options={{
+                     
+                        headerShown: false,
+                        statusBarColor: colors.white,
+                        statusBarStyle: "dark",
+                        headerTitleStyle: {
+                            color: colors.black,
+                            fontSize: 24,
+                            fontWeight: "700"
+                        }
+                    }}
+                    name='SelectedPlaceInfoScreen'
+                    component={SelectedPlaceInfoScreen}
                 />
             </Stack.Navigator>
         </NavigationContainer>
