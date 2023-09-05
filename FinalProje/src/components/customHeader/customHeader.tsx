@@ -7,6 +7,7 @@ import IconO from 'react-native-vector-icons/dist/Octicons'
 import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 import { FilterModal } from '../filterModal'
 import { HistoryEventsModal } from '../historyEventsModal/historyEventsModal'
+import { CustomInput } from '../customInput'
 export const CustomHeader = () => {
 
     const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
@@ -17,15 +18,15 @@ export const CustomHeader = () => {
     const toggleHistoryModal = () => {
         setIsHistoryModalVisible(!isHistoryModalVisible)
     }
+    const [inputValue, setInputValue] = useState('')
+    const handleInputChange = (inputText: string) => {
+        setInputValue(inputText)
+    }
 
     return (
         <View style={style.container}>
             <View style={style.txtInputView}>
-                <TextInput
-                    placeholder='Etkinlik veya konser arayın'
-                    style={style.txtInput}
-                    placeholderTextColor={colors.placeholderTextColor}
-                />
+                <CustomInput onInputChange={handleInputChange} placeHolder='Etkinlik veya konser arayın' />
                 <IconI
                     name="search-sharp"
                     style={style.searchIcon}
