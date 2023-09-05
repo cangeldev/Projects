@@ -11,6 +11,8 @@ interface UserState {
         place: string,
         category: string,
         eventInfo: string,
+        latitudeX: number,
+        longitudeY: number,
     },
 }
 
@@ -24,6 +26,8 @@ const initialState: UserState = {
         place: "",
         category: "",
         eventInfo: "",
+        latitudeX: 0,
+        longitudeY: 0,
     }
 }
 
@@ -56,9 +60,15 @@ export const userSlice = createSlice({
         addEventInfo: (state, action: PayloadAction<string>) => {
             state.EventInfo.eventInfo = action.payload
         },
+        addLatitudeXInfo: (state, action: PayloadAction<number>) => {
+            state.EventInfo.latitudeX = action.payload
+        },
+        addLongitudeYInfo: (state, action: PayloadAction<number>) => {
+            state.EventInfo.longitudeY = action.payload
+        },
     },
 })
 
-export const { addTitle, addEventStart, addEventEnd, addAdrees, addPlace, addPrice, addCategory, addEventInfo } = userSlice.actions
+export const { addLatitudeXInfo, addLongitudeYInfo, addTitle, addEventStart, addEventEnd, addAdrees, addPlace, addPrice, addCategory, addEventInfo } = userSlice.actions
 
 export default userSlice.reducer

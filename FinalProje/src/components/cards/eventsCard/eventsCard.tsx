@@ -4,7 +4,7 @@ import style from './style'
 import { useNavigation } from '@react-navigation/native'
 import IconF from 'react-native-vector-icons/dist/FontAwesome5'
 import { useDispatch } from 'react-redux'
-import { addAdrees, addEventEnd, addEventInfo, addEventStart, addPlace, addPrice, addTitle } from '../../../features/userSlice'
+import { addAdrees, addEventEnd, addEventInfo, addEventStart, addLatitudeXInfo, addLongitudeYInfo, addPlace, addPrice, addTitle } from '../../../features/userSlice'
 
 interface IEventsCard {
     title: string
@@ -12,15 +12,17 @@ interface IEventsCard {
     place: string
     eventStart: string
     eventEnd: string
+    latitudeX: number
+    longitudeY: number
     adress: string
     eventInfo: string
     visible?: boolean
     disabled?: boolean
     posterImage: Image
 }
-export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
+export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
     const dispatch = useDispatch()
-    
+
     const navigation = useNavigation<any>()
     const toggleButton = () => {
         navigation.navigate("EventDetailScreen")
@@ -31,6 +33,8 @@ export const EventsCard: FC<IEventsCard> = ({ title, price, place, eventStart, e
         dispatch(addEventEnd(eventEnd))
         dispatch(addEventInfo(eventInfo))
         dispatch(addAdrees(adress))
+        dispatch(addLatitudeXInfo(latitudeX))
+        dispatch(addLongitudeYInfo(longitudeY))
     }
     return (
         <Pressable

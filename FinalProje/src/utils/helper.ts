@@ -11,6 +11,8 @@ export const EventList = [
         price: "650,00 TL",
         place: "Efes Antik Tiyatro",
         category: "Konser",
+        latitudeX: 40.82633113138088,
+        longitudeY: 31.194335735477313,
         eventInfo: "Sevenlerinin kalbinde taht kuran ve seslendirdiği kendine özgü aşk şarkıları, büyüleyici sesi ve besteleri ile günümüze kadar milyonlarca dinleyici kitlesi yakalayan Yalın, sahnelerde fırtınalar estiren “Unutulmaz Şarkılar” konser serisine Efes Antik Tiyatro’da devam ediyor. Yalın, görkemli sahne tasarımı ve bigband orkestrasıyla hem kalbimizde iz bırakan “Unutulmaz Şarkılar”ı, hem de en sevilen hitlerini bu defa sanatın ve kültürün beşiği Efes Antik Tiyatro’da seslendirecek."
     },
     {
@@ -23,6 +25,8 @@ export const EventList = [
         price: "400,00 TL",
         place: "Kuruçeşme Açıkhava",
         category: "Konser",
+        latitudeX: 40.82633113138088,
+        longitudeY: 31.194335735477313,
         eventInfo: "Poll Production birbirinden değerli sanatçıları müzikseverler ile buluşturmaya devam ediyor. Gökhan Özen, Paraf Kuruçeşme Açıkhava sahnesinde!"
     },
     {
@@ -35,6 +39,8 @@ export const EventList = [
         price: "220,00 TL",
         place: "Kuruçeşme Açıkhava",
         category: "Konser",
+        latitudeX: 40.849868247691994,
+        longitudeY: 31.19187578871899,
         eventInfo: "maNga, 1 Eylül Cuma akşamı Atlantis Yapım organizasyonu ile Antalya Açıkhava'da!"
     },
     {
@@ -47,6 +53,8 @@ export const EventList = [
         price: "100,00 TL",
         place: "IF Performance Hall Beşiktaş",
         category: "Konser",
+        latitudeX: 40.82633113138088,
+        longitudeY: 31.194335735477313,
         eventInfo: "90'lar & 2000'ler Türkçe Pop Parti : Nez & Dj Fikret Kocamaz sizlerle.."
     },
 

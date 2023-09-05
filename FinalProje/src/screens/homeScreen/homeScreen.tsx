@@ -29,6 +29,8 @@ export const HomeScreen = () => {
                 eventInfo={item.eventInfo}
                 price={item.price}
                 posterImage={item.posterImage}
+                latitudeX={item.latitudeX}
+                longitudeY={item.longitudeY}
                 visible={true}
             />)
     return (
