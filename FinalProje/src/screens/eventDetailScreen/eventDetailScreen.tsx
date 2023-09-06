@@ -39,7 +39,11 @@ export const EventDetailScreen: FC = () => {
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
     }
-
+    const formatDate = (dateString: any) => {
+        const date = new Date(dateString)
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
+        return date.toLocaleDateString('tr-TR', options)
+    }
     return (
 
         <View style={style.container}>
@@ -69,7 +73,7 @@ export const EventDetailScreen: FC = () => {
                             style={style.infoIcon}
                         />
                         <Text style={style.infoText}>
-                            {eventStart} - {eventEnd}
+                            {formatDate(eventStart)} - {formatDate(eventEnd)}
                         </Text>
                     </View>
                     <View style={style.infoInnerView}>

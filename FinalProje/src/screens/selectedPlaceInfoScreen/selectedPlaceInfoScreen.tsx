@@ -1,50 +1,83 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import style from './style'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../features/store'
+import { SelectedPlaceCard } from '../../components/cards'
+import { EventList } from '../../utils/helper'
 
 export const SelectedPlaceInfoScreen = () => {
-    const eventInfoAll = useSelector((state: RootState) => state.users.EventInfo);
-    const { title, adress, place, price, eventStart, eventEnd, eventInfo } = eventInfoAll;
-    const render = () => {
+    const filterPlace = useSelector((state: RootState) => state.users.EventInfo.place)
+    const filteredData = EventList.filter(item =>
+        item.place.toLowerCase().includes(filterPlace.toLowerCase())
+    )
+    const eventInfoAll = useSelector((state: RootState) => state.users.EventInfo)
+    const { adress } = eventInfoAll;
 
+    const currentDate = new Date();
+
+    const filterFutureEvents = (item: any) => {
+        const eventDate = new Date(item.eventStart);
+        return eventDate >= currentDate;
     }
-    const flatListData = [
-        {
-            id: '1',
-            title: 'Başlık 1',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-        },
-        {
-            id: '2',
-            title: 'Başlık 2',
-            text: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-        },
-        {
-            id: '3',
-            title: 'Başlık 3',
-            text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'
-        },
-    ]
+
+    const filterPastEvents = (item: any) => {
+        const eventDate = new Date(item.eventStart);
+        return eventDate < currentDate;
+    }
+
+    const formatDate = (dateString: any) => {
+        const date = new Date(dateString)
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
+        return date.toLocaleDateString('tr-TR', options)
+    }
+
+    const futureEvents = filteredData.filter(filterFutureEvents)
+    const pastEvents = filteredData.filter(filterPastEvents)
+
     return (
         <View style={style.container}>
-            <View style={style.innerContainer}>
-                <Text style={style.title}>
-                    Mekan Lokasyonu
-                </Text>
-                <View style={style.divider} />
-                <Text style={style.address}>
-                    {adress}
-                </Text>
-            </View>
-            <View style={style.historyEventView}>
-                <Text style={style.title}>
-                    Süresi Geçmiş Etkinliklerimiz:
-                </Text>
-                <FlatList data={flatListData} renderItem={({ item }) => <Text>{item.text}</Text>} />
-            </View>
-
+            <ScrollView>
+                <View style={style.innerContainer}>
+                    <Text style={style.title}>
+                        Mekan Lokasyonu
+                    </Text>
+                    <View style={style.divider} />
+                    <Text style={style.address}>
+                        {adress}
+                    </Text>
+                </View>
+                <View style={style.historyEventView}>
+                    <Text style={style.title}>
+                        Gelecek Etkinliklerimiz:
+                    </Text>
+                    <View style={style.divider} />
+                    <FlatList
+                        ItemSeparatorComponent={() => <View style={style.divider} />}
+                        data={futureEvents}
+                        renderItem={({ item }) => <SelectedPlaceCard
+                            price={item.price}
+                            eventDate={formatDate(item.eventStart) + " - " + formatDate(item.eventEnd)}
+                            title={item.title}
+                        />}
+                    />
+                </View>
+                <View style={style.historyEventView}>
+                    <Text style={style.title}>
+                        Geçmiş Etkinliklerimiz:
+                    </Text>
+                    <View style={style.divider} />
+                    <FlatList
+                        ItemSeparatorComponent={() => <View style={style.divider} />}
+                        data={pastEvents}
+                        renderItem={({ item }) => <SelectedPlaceCard
+                            price={item.price}
+                            eventDate={formatDate(item.eventStart) + " - " + formatDate(item.eventEnd)}
+                            title={item.title}
+                        />}
+                    />
+                </View>
+            </ScrollView>
         </View>
     )
 }
