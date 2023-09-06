@@ -3,15 +3,13 @@ import React, { useMemo, useState } from 'react'
 import RadioGroup, { RadioButtonProps } from 'react-native-radio-buttons-group'
 import style from './style'
 import colors from '../../assets/colors/colors'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addFilterEventCategory } from '../../features/userSlice'
-import { RootState } from '../../features/store'
 
 export const RadioButtonGroup = () => {
     const dispatch = useDispatch()
-    const test = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory)
+   
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
-
         {
             id: '1',
             label: 'Eğitim & Fazlası',
@@ -22,7 +20,6 @@ export const RadioButtonGroup = () => {
                 color: colors.black,
                 marginLeft: 15,
                 fontSize: 17
-
             }
         },
         {
@@ -36,7 +33,6 @@ export const RadioButtonGroup = () => {
                 marginLeft: 15,
                 fontSize: 17
             }
-
         },
         {
             id: '3',

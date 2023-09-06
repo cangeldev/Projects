@@ -1,42 +1,54 @@
-import { View, Text, Image, ScrollView, FlatList, Pressable, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
+import { View, Text, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native'
+import React, { FC, useState } from 'react'
 import style from './style'
-import { useNavigation } from '@react-navigation/native'
-import { SlaytSlider } from '../../components'
-import IconI from 'react-native-vector-icons/dist/Ionicons'
-import IconF from 'react-native-vector-icons/dist/FontAwesome5'
-import IconE from 'react-native-vector-icons/dist/FontAwesome'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import IconI from 'react-native-vector-icons/Ionicons'
+import IconF from 'react-native-vector-icons/FontAwesome5'
 import { EventInfoRules } from '../../utils/helper'
 import Share from 'react-native-share'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../features/store'
-import { MapModal } from '../../components/mapModal'
 import { SelectedPlaceInfoScreen } from '../selectedPlaceInfoScreen'
+import { MapModal } from '../../components/modals'
+import { CustomButton } from '../../components'
 
-export const EventDetailScreen = () => {
+
+interface IEventDetailScreen {
+    posterImage: Image,
+}
+
+export const EventDetailScreen: FC = () => {
     const navigation = useNavigation<any>()
+    const route = useRoute();
+    const { posterImage } = route.params as IEventDetailScreen
+
     const [isMapModalVisible, setIsMapModalVisible] = useState(false)
     const toggleMapModal = () => {
         setIsMapModalVisible(!isMapModalVisible)
     }
 
     const eventInfoAll = useSelector((state: RootState) => state.users.EventInfo);
-    const { title, adress, place, price, eventStart, eventEnd, eventInfo } = eventInfoAll;
+    const { title, adress, place, price, eventStart, eventEnd, eventInfo } = eventInfoAll
 
     const shareEvent = () => {
         const options = {
             message: `Etkinlik: ${title}\nMekan: ${place}\nKonum: ${adress}\nFiyatı: ${price}`,
-        };
+        }
 
         Share.open(options)
             .then((res) => console.log(res))
             .catch((err) => console.log(err));
-    };
+    }
+
     return (
 
         <View style={style.container}>
             <ScrollView>
-                <SlaytSlider visibleInfo={false} />
+                <View style={style.imageView}>
+                    <Image source={posterImage as any} style={
+                        style.image
+                    } />
+                </View>
                 <IconI
                     onPress={() => navigation.goBack()}
                     name="chevron-back"
@@ -70,28 +82,17 @@ export const EventDetailScreen = () => {
                         </Text>
                     </View>
                     <View style={style.mapView}>
-                        <Pressable
-                            onPress={() =>  navigation.navigate(SelectedPlaceInfoScreen)}
-                            style={style.mapButton}>
-                            <IconE
-                                name="search"
-                                style={style.mapIcon}
-                            />
-                            <Text style={style.mapButtonText}>
-                                Mekanı İncele
-                            </Text>
-                        </Pressable>
-                        <Pressable
-                            onPress={toggleMapModal}
-                            style={style.mapButton}>
-                            <IconF
-                                name="map-marked-alt"
-                                style={style.mapIcon}
-                            />
-                            <Text style={style.mapButtonText}>
-                                Konumu
-                            </Text>
-                        </Pressable>
+                        <CustomButton
+                            icon='search'
+                            title='Mekanı İncele'
+                            onClick={() => navigation.navigate(SelectedPlaceInfoScreen)}
+                        />
+                        <CustomButton
+                            icon='map-marker'
+                            title='Konumu'
+                            onClick={toggleMapModal}
+                        />
+
                     </View>
                 </View>
                 <View style={style.divider} />

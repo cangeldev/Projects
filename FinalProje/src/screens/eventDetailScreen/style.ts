@@ -1,5 +1,6 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
 import colors from "../../assets/colors/colors"
+const windowHeight = Dimensions.get('window').height
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -96,6 +97,13 @@ export default StyleSheet.create({
     },
     paddingView: {
         paddingBottom: 60
+    },
+    imageView: { width: "100%", height: windowHeight / 2.3, backgroundColor: "red" },
+    image:{
+        width: "100%",
+        height: "100%",
+        resizeMode: "stretch"
+
     }
 
 

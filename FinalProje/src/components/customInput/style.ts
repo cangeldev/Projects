@@ -8,5 +8,5 @@ export default StyleSheet.create({
         borderRadius: 7,
         paddingHorizontal: 35,
         fontSize: 16
-    },
+    }
 })

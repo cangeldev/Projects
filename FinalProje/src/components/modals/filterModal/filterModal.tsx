@@ -1,8 +1,8 @@
 import { View, Text, Modal, Pressable } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
-import { RadioButtonGroup } from '../radioButtonGroup'
-import IconI from 'react-native-vector-icons/dist/AntDesign'
+import { RadioButtonGroup } from '../../radioButtonGroup'
+import IconI from 'react-native-vector-icons/AntDesign'
 
 interface IFilterModal {
     visibleModal: boolean

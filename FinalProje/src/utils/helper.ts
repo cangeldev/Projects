@@ -314,3 +314,22 @@ export const EventInfoRules = [
     },
 
 ]
+export const PopularEvents = [
+    {
+        id: 1,
+        img: Gulsen
+    },
+    {
+        id: 2,
+        img: Piraye
+    },
+    {
+        id: 3,
+        img: Tilbe
+    },
+    {
+        id: 4,
+        img: Bulent
+    },
+
+]

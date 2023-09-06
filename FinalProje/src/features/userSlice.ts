@@ -75,8 +75,8 @@ export const userSlice = createSlice({
         },
         addFilterEventCategory: (state, action: PayloadAction<string>) => {
             state.EventInfo.filterEventCategory = action.payload
-        },
-    },
+        }
+    }
 })
 
 export const { addFilterEventCategory, addFilterEvent, addLatitudeXInfo, addLongitudeYInfo, addTitle, addEventStart, addEventEnd, addAdrees, addPlace, addPrice, addCategory, addEventInfo } = userSlice.actions

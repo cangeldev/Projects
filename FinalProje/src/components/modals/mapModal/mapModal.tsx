@@ -1,11 +1,11 @@
-
 import { View, Modal, Pressable, } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
-import IconI from 'react-native-vector-icons/dist/AntDesign'
+import IconI from 'react-native-vector-icons/AntDesign'
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import { useSelector } from 'react-redux';
-import { RootState } from "../../features/store"
+import { RootState } from "../../../features/store"
+
 interface IMapModal {
     visibleModal: boolean
     closeModal: () => void
@@ -21,7 +21,6 @@ export const MapModal: FC<IMapModal> = ({ visibleModal, closeModal }) => {
         longitudeDelta: 0.01,
     };
     return (
-
         <Modal
             statusBarTranslucent={true}
             animationType="slide"

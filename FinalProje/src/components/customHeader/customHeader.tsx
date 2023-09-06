@@ -1,8 +1,8 @@
 import { View } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import style from './style'
-import IconI from 'react-native-vector-icons/dist/Ionicons'
-import IconO from 'react-native-vector-icons/dist/Octicons'
+import IconI from 'react-native-vector-icons/Ionicons'
+import IconO from 'react-native-vector-icons/Octicons'
 import { CustomInput } from '../customInput'
 
 export const CustomHeader = () => {

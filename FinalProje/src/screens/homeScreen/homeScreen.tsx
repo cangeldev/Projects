@@ -1,13 +1,13 @@
-import { View, Text, FlatList, Pressable } from 'react-native';
-import React, { useState } from 'react';
-import { CustomHeader, FilterModal, SlaytSlider } from '../../components';
-import { EventsCard } from '../../components/cards';
-import style from './style';
-import { EventList } from '../../utils/helper';
-import IconF from 'react-native-vector-icons/dist/FontAwesome5'
-import { HistoryEventsModal } from '../../components/historyEventsModal';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../features/store';
+import { View, Text, FlatList, Pressable } from 'react-native'
+import React, { useState } from 'react'
+import { CustomHeader, SlaytSlider } from '../../components'
+import { EventsCard } from '../../components/cards'
+import style from './style'
+import { EventList } from '../../utils/helper'
+import IconF from 'react-native-vector-icons/FontAwesome5'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../features/store'
+import { FilterModal, HistoryEventsModal } from '../../components/modals'
 
 export const HomeScreen = () => {
 
@@ -28,16 +28,17 @@ export const HomeScreen = () => {
 
     const filteredData = EventList.filter(item =>
         item.title.toLowerCase().includes(filterText.toLowerCase())
-    );
+    )
+
     const filteredDataCategory = EventList.filter(item =>
         item.category.toLowerCase().includes(filterTextCategory.toLowerCase())
-    );
-    const combinedData = filterTextCategory ? filteredDataCategory : filteredData;
-    const eventCount = combinedData.length;
+    )
+
+    const combinedData = filterTextCategory ? filteredDataCategory : filteredData
+    const eventCount = combinedData.length
+
     const renderHeader = () => (
         <>
-
-
             <HistoryEventsModal
                 visibleModal={isHistoryModalVisible}
                 closeModal={toggleHistoryModal}
@@ -62,13 +63,13 @@ export const HomeScreen = () => {
                 </View>
             </View>
             <View style={style.sliderView}>
-                <SlaytSlider visibleInfo={true} />
+                <SlaytSlider />
             </View>
             <Text style={style.title}>
                 Güncel Etkinlikler
             </Text>
         </>
-    );
+    )
     const render =
         (({ item }: any) =>
             <EventsCard
@@ -98,5 +99,5 @@ export const HomeScreen = () => {
                 ListHeaderComponent={renderHeader}
             />
         </View>
-    );
-};
+    )
+}

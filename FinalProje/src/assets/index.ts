@@ -1,4 +1,3 @@
-export const Muze = require("./images/muze.jpg");
 export const Bos = require("./images/bos.png");
 export const Nilgun = require("./images/nilgun.jpg");
 export const Bulent = require("./images/bulent.png");

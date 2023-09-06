@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native"
-import colors from "../../assets/colors/colors"
+import colors from "../../../assets/colors/colors"
 
 const windowWidth = Dimensions.get('window').width
 const windowHeight = Dimensions.get('window').height
@@ -24,16 +24,12 @@ export default StyleSheet.create({
         position: "absolute",
         right: 15,
         top: -35
-
     },
     title: {
         fontSize: 18,
         color: colors.black,
         fontWeight: "bold",
         marginVertical: 10,
-        paddingHorizontal: 15       
-    },
-    headerView: {
-
+        paddingHorizontal: 15
     }
 })

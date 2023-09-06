@@ -2,9 +2,19 @@ import { View, Text, Image, Pressable } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 import { useNavigation } from '@react-navigation/native'
-import IconF from 'react-native-vector-icons/dist/FontAwesome5'
+import IconF from 'react-native-vector-icons/FontAwesome5'
 import { useDispatch } from 'react-redux'
-import { addAdrees, addEventEnd, addEventInfo, addEventStart, addLatitudeXInfo, addLongitudeYInfo, addPlace, addPrice, addTitle } from '../../../features/userSlice'
+import {
+    addAdrees,
+    addEventEnd,
+    addEventInfo,
+    addEventStart,
+    addLatitudeXInfo,
+    addLongitudeYInfo,
+    addPlace,
+    addPrice,
+    addTitle
+} from '../../../features/userSlice'
 
 interface IEventsCard {
     title: string
@@ -22,10 +32,9 @@ interface IEventsCard {
 }
 export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
     const dispatch = useDispatch()
-
     const navigation = useNavigation<any>()
     const toggleButton = () => {
-        navigation.navigate("EventDetailScreen")
+        navigation.navigate("EventDetailScreen", { posterImage: posterImage })
         dispatch(addTitle(title))
         dispatch(addPlace(place))
         dispatch(addPrice(price))
@@ -71,8 +80,6 @@ export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, pric
                             </Pressable> :
                             null
                     }
-
-
                 </View>
                 {
                     visible == false ?

@@ -9,13 +9,6 @@ export default StyleSheet.create({
         justifyContent: "center",
         marginTop: 10
     },
-    txtInput: {
-        backgroundColor: colors.txtInputBackGround,
-        marginHorizontal: 20,
-        borderRadius: 7,
-        paddingHorizontal: 35,
-        fontSize: 16
-    },
     searchIcon: {
         fontSize: 23,
         position: "absolute",

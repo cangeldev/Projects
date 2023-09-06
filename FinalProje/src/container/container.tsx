@@ -1,10 +1,10 @@
-import { View, BackHandler } from 'react-native'
+import { BackHandler } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import colors from '../assets/colors/colors'
 import { EventDetailScreen, HomeScreen, SelectedPlaceInfoScreen } from '../screens'
-import IconE from 'react-native-vector-icons/dist/Entypo'
+import IconE from 'react-native-vector-icons/Entypo'
 import { useSelector } from 'react-redux'
 import { RootState } from '../features/store'
 
@@ -55,7 +55,6 @@ export const Container = () => {
                 />
                 <Stack.Screen
                     options={{
-
                         headerTitle: place,
                         statusBarColor: colors.white,
                         statusBarStyle: "dark",

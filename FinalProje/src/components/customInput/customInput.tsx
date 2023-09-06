@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { TextInput } from 'react-native'
 import style from './style'
 import colors from '../../assets/colors/colors'
@@ -9,16 +9,16 @@ interface CustomInputProps {
   placeHolder: string
 }
 
-export const CustomInput: React.FC<CustomInputProps> = ({  placeHolder }) => { 
+export const CustomInput: React.FC<CustomInputProps> = ({ placeHolder }) => {
 
-  const dispatch = useDispatch() 
-
+  const dispatch = useDispatch()
   return (
-    <TextInput     
-      onChangeText={(text) => dispatch(addFilterEvent(text))}
+    <TextInput
+      onChangeText=
+      {(text) => dispatch(addFilterEvent(text))}
       placeholder={placeHolder}
       style={style.txtInput}
       placeholderTextColor={colors.placeholderTextColor}
     />
-  );
+  )
 }
