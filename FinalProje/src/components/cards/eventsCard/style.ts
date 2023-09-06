@@ -51,7 +51,8 @@ export default StyleSheet.create({
     },
     adress: {
         color: colors.placeholderTextColor,
-        width: windowWidth / 1.6
+        width: windowWidth / 1.6,
+        paddingRight:6
     },
     button: {
         backgroundColor: colors.headerButtonColor,

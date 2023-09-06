@@ -2,24 +2,20 @@ import React, { useState } from 'react'
 import { TextInput } from 'react-native'
 import style from './style'
 import colors from '../../assets/colors/colors'
+import { useDispatch } from 'react-redux'
+import { addFilterEvent } from '../../features/userSlice'
 
 interface CustomInputProps {
-  onInputChange: (inputText: string) => void
   placeHolder: string
 }
 
-export const CustomInput: React.FC<CustomInputProps> = ({ onInputChange, placeHolder }) => {
-  const [inputText, setInputText] = useState('')
+export const CustomInput: React.FC<CustomInputProps> = ({  placeHolder }) => { 
 
-  const handleTextChange = (text: string) => {
-    setInputText(text)
-    onInputChange(text)
-  }
+  const dispatch = useDispatch() 
 
   return (
-    <TextInput
-      value={inputText}
-      onChangeText={handleTextChange}
+    <TextInput     
+      onChangeText={(text) => dispatch(addFilterEvent(text))}
       placeholder={placeHolder}
       style={style.txtInput}
       placeholderTextColor={colors.placeholderTextColor}

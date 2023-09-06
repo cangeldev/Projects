@@ -1,32 +1,18 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
+import { View } from 'react-native'
 import React, { useState } from 'react'
 import style from './style'
-import colors from '../../assets/colors/colors'
 import IconI from 'react-native-vector-icons/dist/Ionicons'
 import IconO from 'react-native-vector-icons/dist/Octicons'
-import IconF from 'react-native-vector-icons/dist/FontAwesome5'
-import { FilterModal } from '../filterModal'
-import { HistoryEventsModal } from '../historyEventsModal/historyEventsModal'
 import { CustomInput } from '../customInput'
-export const CustomHeader = () => {
 
-    const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
-    const [isHistoryModalVisible, setIsHistoryModalVisible] = useState(false)
-    const toggleFilterModal = () => {
-        setIsFilterModalVisible(!isFilterModalVisible)
-    }
-    const toggleHistoryModal = () => {
-        setIsHistoryModalVisible(!isHistoryModalVisible)
-    }
-    const [inputValue, setInputValue] = useState('')
-    const handleInputChange = (inputText: string) => {
-        setInputValue(inputText)
-    }
+export const CustomHeader = () => {
 
     return (
         <View style={style.container}>
             <View style={style.txtInputView}>
-                <CustomInput onInputChange={handleInputChange} placeHolder='Etkinlik veya konser arayın' />
+                <CustomInput
+                    placeHolder='Etkinlik veya konser arayın'
+                />
                 <IconI
                     name="search-sharp"
                     style={style.searchIcon}
@@ -36,33 +22,6 @@ export const CustomHeader = () => {
                     style={style.sortIcon}
                 />
             </View>
-            <View style={style.filterView}>
-                <Text style={style.activityCountText}>
-                    12 Etkinlik Bulundu
-                </Text>
-
-                <View style={{ flexDirection: "row" }}>
-                    <Pressable onPress={toggleHistoryModal}>
-                        <IconF
-                            name="history"
-                            style={style.historyButton}
-                        />
-                    </Pressable>
-                    <Pressable onPress={toggleFilterModal}>
-                        <Text style={style.buttonText}>
-                            Filtre
-                        </Text>
-                    </Pressable>
-                </View>
-            </View>
-            <FilterModal
-                visibleModal={isFilterModalVisible}
-                closeModal={toggleFilterModal}
-            />
-            <HistoryEventsModal
-                visibleModal={isHistoryModalVisible}
-                closeModal={toggleHistoryModal}
-            />
         </View>
     )
 }

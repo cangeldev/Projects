@@ -5,9 +5,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import colors from '../assets/colors/colors'
 import { EventDetailScreen, HomeScreen, SelectedPlaceInfoScreen } from '../screens'
 import IconE from 'react-native-vector-icons/dist/Entypo'
+import { useSelector } from 'react-redux'
+import { RootState } from '../features/store'
 
 export const Container = () => {
-
+    const place = useSelector((state: RootState) => state.users.EventInfo.place)
     const Stack = createNativeStackNavigator()
 
     return (
@@ -53,14 +55,13 @@ export const Container = () => {
                 />
                 <Stack.Screen
                     options={{
-                     
-                        headerShown: false,
+
+                        headerTitle: place,
                         statusBarColor: colors.white,
                         statusBarStyle: "dark",
                         headerTitleStyle: {
                             color: colors.black,
                             fontSize: 24,
-                            fontWeight: "700"
                         }
                     }}
                     name='SelectedPlaceInfoScreen'

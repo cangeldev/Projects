@@ -16,36 +16,6 @@ export default StyleSheet.create({
         paddingHorizontal: 35,
         fontSize: 16
     },
-    buttonText: {
-        borderWidth: 2.5,
-        padding: 5,
-        borderRadius: 5,
-        paddingHorizontal: 8,
-        fontWeight: "600",
-        borderColor: colors.headerButtonColor,
-        color: colors.headerButtonColor,
-        textAlign: "center",
-        textAlignVertical: "center"
-    },
-    historyButton: {
-        borderWidth: 2.5,
-        padding: 5,
-        borderRadius: 5,
-        paddingHorizontal: 8,      
-        borderColor: colors.headerButtonColor,
-        color: colors.headerButtonColor,
-        textAlign: "center",
-        textAlignVertical: "center",
-        fontSize:18,
-        marginRight:10
-    },
-    filterView: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        marginVertical: 8,
-        paddingHorizontal: 20,
-        alignItems: "center"
-    },
     searchIcon: {
         fontSize: 23,
         position: "absolute",
@@ -58,8 +28,5 @@ export default StyleSheet.create({
         right: 26,
         color: colors.txtInputIconColor
     },
-    activityCountText: {
-        color: colors.black,
-        fontSize: 16
-    }
+
 })
