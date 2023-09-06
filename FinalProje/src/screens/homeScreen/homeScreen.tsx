@@ -11,6 +11,14 @@ import { FilterModal, HistoryEventsModal } from '../../components/modals'
 
 export const HomeScreen = () => {
 
+    const currentDate = new Date()
+    const filterFutureEvents = (item: any) => {
+        const eventDate = new Date(item.eventStart);
+        return eventDate >= currentDate
+    }
+    const futureEvents = EventList.filter(filterFutureEvents)
+
+
     const filterText = useSelector((state: RootState) => state.users.EventInfo.filterEvent)
     const filterTextCategory = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory)
 
@@ -26,11 +34,11 @@ export const HomeScreen = () => {
     }
 
 
-    const filteredData = EventList.filter(item =>
+    const filteredData = futureEvents.filter(item =>
         item.title.toLowerCase().includes(filterText.toLowerCase())
     )
 
-    const filteredDataCategory = EventList.filter(item =>
+    const filteredDataCategory = futureEvents.filter(item =>
         item.category.toLowerCase().includes(filterTextCategory.toLowerCase())
     )
 

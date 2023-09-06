@@ -10,7 +10,12 @@ interface IHistoryEventsModal {
     closeModal: () => void
 }
 export const HistoryEventsModal: FC<IHistoryEventsModal> = ({ visibleModal, closeModal }) => {
-
+    const currentDate = new Date()
+    const filterPastEvents = (item: any) => {
+        const eventDate = new Date(item.eventStart);
+        return eventDate < currentDate
+    }
+    const pastEvents = EventList.filter(filterPastEvents)
     return (
         <Modal
             statusBarTranslucent={true}
@@ -34,7 +39,7 @@ export const HistoryEventsModal: FC<IHistoryEventsModal> = ({ visibleModal, clos
                     </Pressable>
                     <FlatList
                         showsVerticalScrollIndicator={false}
-                        data={EventList}
+                        data={pastEvents}
                         renderItem={({ item }) =>
                             <EventsCard
                                 title={item.title}

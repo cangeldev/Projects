@@ -45,6 +45,11 @@ export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, pric
         dispatch(addLatitudeXInfo(latitudeX))
         dispatch(addLongitudeYInfo(longitudeY))
     }
+    const formatDate = (dateString: any) => {
+        const date = new Date(dateString)
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
+        return date.toLocaleDateString('tr-TR', options)
+    }
     return (
         <Pressable
             disabled={disabled}
@@ -89,7 +94,7 @@ export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, pric
                                 style={style.infoIcon}
                             />
                             <Text style={style.infoText}>
-                                {eventStart} - {eventEnd}
+                                {formatDate(eventStart)} - {formatDate(eventEnd)}
                             </Text>
                         </View> :
                         null
