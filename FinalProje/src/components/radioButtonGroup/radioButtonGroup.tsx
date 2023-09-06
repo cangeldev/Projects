@@ -3,13 +3,18 @@ import React, { useMemo, useState } from 'react'
 import RadioGroup, { RadioButtonProps } from 'react-native-radio-buttons-group'
 import style from './style'
 import colors from '../../assets/colors/colors'
+import { useDispatch, useSelector } from 'react-redux'
+import { addFilterEventCategory } from '../../features/userSlice'
+import { RootState } from '../../features/store'
 
 export const RadioButtonGroup = () => {
+    const dispatch = useDispatch()
+    const test = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory)
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
 
         {
             id: '1',
-            label: 'Hepsi',
+            label: 'Eğitim & Fazlası',
             value: 'option1',
             color: colors.headerButtonColor,
             size: 20,
@@ -47,7 +52,7 @@ export const RadioButtonGroup = () => {
         },
         {
             id: '4',
-            label: 'Galeri ',
+            label: 'Galeri',
             value: 'option4',
             color: colors.headerButtonColor,
             size: 20,
@@ -93,20 +98,13 @@ export const RadioButtonGroup = () => {
                 fontSize: 17
             }
         },
-        {
-            id: '8',
-            label: 'Eğitim & Fazlası',
-            value: 'option8',
-            color: colors.headerButtonColor,
-            size: 20,
-            labelStyle: {
-                color: colors.black,
-                marginLeft: 15,
-                fontSize: 17
-            }
-        },
     ]), [])
     const [selectedId, setSelectedId] = useState<string | undefined>()
+    const getSelectedLabel = () => {
+        const selectedRadioButton = radioButtons.find(button => button.id === selectedId);
+        dispatch(addFilterEventCategory(selectedRadioButton ? selectedRadioButton.label : ''))
+        return selectedRadioButton ? selectedRadioButton.label : '';
+    };
     return (
         <View style={style.container}>
             <Text style={style.titleText}>
@@ -118,6 +116,9 @@ export const RadioButtonGroup = () => {
                 onPress={setSelectedId}
                 selectedId={selectedId}
             />
+            <Text style={{color:"white"}}>
+                Seçilen: {getSelectedLabel()}
+            </Text>
         </View>
     );
 }

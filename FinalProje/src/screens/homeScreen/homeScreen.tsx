@@ -11,29 +11,33 @@ import { RootState } from '../../features/store';
 
 export const HomeScreen = () => {
 
-    const filterText=useSelector((state:RootState)=>state.users.EventInfo.filterEvent)
-    const eventCount = EventList.length;
-    const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
-    const [isHistoryModalVisible, setIsHistoryModalVisible] = useState(false)
+    const filterText = useSelector((state: RootState) => state.users.EventInfo.filterEvent)
+    const filterTextCategory = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory)
 
+    const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
     const toggleFilterModal = () => {
         setIsFilterModalVisible(!isFilterModalVisible)
+
     }
+
+    const [isHistoryModalVisible, setIsHistoryModalVisible] = useState(false)
     const toggleHistoryModal = () => {
         setIsHistoryModalVisible(!isHistoryModalVisible)
     }
 
-    
+
     const filteredData = EventList.filter(item =>
         item.title.toLowerCase().includes(filterText.toLowerCase())
-      );
+    );
+    const filteredDataCategory = EventList.filter(item =>
+        item.category.toLowerCase().includes(filterTextCategory.toLowerCase())
+    );
+    const combinedData = filterTextCategory ? filteredDataCategory : filteredData;
+    const eventCount = combinedData.length;
     const renderHeader = () => (
         <>
-          
-            <FilterModal
-                visibleModal={isFilterModalVisible}
-                closeModal={toggleFilterModal}
-            />
+
+
             <HistoryEventsModal
                 visibleModal={isHistoryModalVisible}
                 closeModal={toggleHistoryModal}
@@ -82,10 +86,14 @@ export const HomeScreen = () => {
             />)
     return (
         <View style={style.container}>
-              <CustomHeader />
+            <CustomHeader />
+            <FilterModal
+                visibleModal={isFilterModalVisible}
+                closeModal={toggleFilterModal}
+            />
             <FlatList
                 showsVerticalScrollIndicator={false}
-                data={filteredData}
+                data={combinedData}
                 renderItem={render}
                 ListHeaderComponent={renderHeader}
             />

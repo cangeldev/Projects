@@ -122,7 +122,7 @@ export const EventList = [
         adress: "Cemal Gürsel Cad. Hasan Ali Yücel Blv., 2009. Sk. BOSTANLI / İzmir",
         price: "170,00 TL",
         place: "Bostanlı Suat Taşer Tiyatrosu",
-        category: "Konser",
+        category: "Konser Etkinlikleri",
         latitudeX: 38.454482924601784,
         longitudeY: 27.098808741100992,
         eventInfo: "1971 yılında Dersim’de dünyaya gelen Ahmet Aslan, 1993 - 1996 yılları arasında İstanbul Teknik Üniversitesi Konservatuarı'nda eğitim gördü. 1996'dan beri Almanya'da yaşamını sürdüren Aslan’ın, 2003 yılında “Va u Waxt (Rüzgar ve Zaman)” adlı ilk solo albümü yayınlanmıştır. İlk albümüyle çok dikkat çeken müzisyen, bu albümün ardından 2008 yılında “Veyve Milaketu (Meleklerin Dansı)” isimli yeni albümünü dinleyecilerine sunmuştur. 2008-2012 yılları arasında Dünya Müziği üzerine eğitim görmüştür."
@@ -136,7 +136,7 @@ export const EventList = [
         adress: "Taşkışla Cad. HARBİYE / İstanbul",
         price: "300,00 TL",
         place: "İstanbul Büyükşehir Belediyesi Harbiye Cemil Topuzlu Açıkhava Tiyatrosu",
-        category: "Konser",
+        category: "Konser Etkinlikleri",
         latitudeX: 41.04434223876437,
         longitudeY: 28.99058445207425,
         eventInfo: "Yıldız Tilbe çok sevilen sahne performansıyla 4 Ekim akşamı Harbiye Açık Hava Tiyatorusu’nda! Jolly Joker farkıyla izleyeceğiniz konserin sınırlı sayıda avantajlı dönem biletlerini kaçırmayın!"
@@ -150,7 +150,7 @@ export const EventList = [
         adress: "Vadistanbul, Ayazağa Mahallesi. Cendere Caddesi 1. Apt No:109 İç Kapı No:254 AYAZAĞA / İstanbul",
         price: "100,00 TL",
         place: "Turkcell Vadi",
-        category: "Konser",
+        category: "Konser Etkinlikleri",
         latitudeX: 41.10795168132644,
         longitudeY: 28.987322311601194,
         eventInfo: "Soul müziğin Fransız divası Imany yoğun talep üzerine bir kez daha İstanbul’da, 7 Eylül’de Turkcell Vadi Açıkhava sahnesinde! İlk albümü “Shape of a Broken Heart” ile üç ülkede platin plak ödülü kazanarak geniş bir hayran kitlesi edinen, “You Will Never Know” ve “Don’t Be Shy” single’ları ile dünya çapında üne kavuşan Imany, şarkılarında aşkın yanısıra, kadın hakları, iklim değişikliği gibi gibi birçok konuda sevenlerinin sesi oluyor ve adeta bir hikaye anlatıcısı olarak günümüz dünyasını şarkılarıyla anlatıyor."
@@ -164,7 +164,7 @@ export const EventList = [
         adress: "Taşkışla Cad. HARBİYE / İstanbul",
         price: "300,00 TL",
         place: "İstanbul Büyükşehir Belediyesi Harbiye Cemil Topuzlu Açıkhava Tiyatrosu",
-        category: "Konser",
+        category: "Konser Etkinlikleri",
         latitudeX: 41.04434223876437,
         longitudeY: 28.99058445207425,
         eventInfo: "Gülşen çok sevilen sahne performansıyla 6 Ekim akşamı Harbiye Açık Hava Tiyatorusu’nda! Jolly Joker farkıyla izleyeceğiniz konserin sınırlı sayıda avantajlı dönem biletlerini kaçırmayın!"

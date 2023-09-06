@@ -26,7 +26,7 @@ export const FilterModal: FC<IFilterModal> = ({ visibleModal, closeModal }) => {
                         />
                     </Pressable>
                     <RadioButtonGroup />
-                    <Pressable onPress={() => console.log("first")}>
+                    <Pressable onPress={closeModal}>
                         <Text style={style.listButtonText}>
                             LİSTELE
                         </Text>
