@@ -13,10 +13,12 @@ export const CustomButton: FC<ICustomButton> = ({ title, onClick, icon }) => {
         <Pressable
             onPress={onClick}
             style={style.mapButton}>
-            <IconE
-                name={icon as any}
-                style={style.mapIcon}
-            />
+           {   icon!=null?
+           <IconE
+           name={icon as any}
+           style={style.mapIcon}
+       />:null
+           }
             <Text style={style.mapButtonText}>
                 {title}
             </Text>

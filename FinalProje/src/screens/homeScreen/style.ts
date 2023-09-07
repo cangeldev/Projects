@@ -40,6 +40,20 @@ export default StyleSheet.create({
         textAlign: "center",
         textAlignVertical: "center"
     },
+    buttonFilterText:{
+        borderWidth: 2.5,
+        borderColor:colors.headerButtonColor,
+        padding: 5,
+        borderRadius: 5,
+        paddingHorizontal: 5,
+        fontWeight: "600",
+        backgroundColor: colors.headerButtonColor,
+        color: colors.white,
+        textAlign: "center",
+        textAlignVertical: "center",
+        marginLeft:-10,
+        marginRight:10
+    },
     historyButton: {
         borderWidth: 2.5,
         padding: 5,
@@ -50,6 +64,6 @@ export default StyleSheet.create({
         textAlign: "center",
         textAlignVertical: "center",
         fontSize:18,
-        marginRight:10
+        marginRight:10,
     },
 })

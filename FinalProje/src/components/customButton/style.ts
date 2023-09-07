@@ -14,7 +14,6 @@ export default StyleSheet.create({
         flexDirection: "row"
     },
     mapButtonText: {
-        marginLeft: 10,
         fontSize: 16,
 
         color: colors.white
@@ -22,6 +21,7 @@ export default StyleSheet.create({
     mapIcon: {
         fontSize: 20,
         color: colors.white,
+        marginRight:10
     },
 
 })

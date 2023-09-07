@@ -1,5 +1,6 @@
 export { CustomHeader } from "./customHeader/index"
 export { CustomInput } from "./customInput/index"
 export { CustomButton } from "./customButton/index"
+export { DateSelect } from "./dateSelect/index"
 export { SlaytSlider } from "./slaytSlider/index"
 export { RadioButtonGroup } from "./radioButtonGroup/index"
