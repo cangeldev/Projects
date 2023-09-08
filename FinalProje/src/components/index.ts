@@ -1,5 +1,7 @@
 export { CustomHeader } from "./customHeader/index"
 export { CustomInput } from "./customInput/index"
+export { CustomTextView } from "./customTextView/index"
+export { CustomPaymentInput } from "./customPaymentInput/index"
 export { CustomButton } from "./customButton/index"
 export { DateSelect } from "./dateSelect/index"
 export { SlaytSlider } from "./slaytSlider/index"
