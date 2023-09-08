@@ -16,7 +16,8 @@ interface UserState {
         filterEvent: string
         filterEventCategory: string
         selectedStart: string
-        selectedEnd: string
+        selectedEnd: string,
+        vip: string
     },
 }
 
@@ -35,7 +36,8 @@ const initialState: UserState = {
         filterEvent: "",
         filterEventCategory: "",
         selectedStart: "",
-        selectedEnd: ""
+        selectedEnd: "",
+        vip: ""
     }
 }
 
@@ -86,9 +88,12 @@ export const userSlice = createSlice({
         addSelectedEnd: (state, action: PayloadAction<string>) => {
             state.EventInfo.selectedEnd = action.payload
         },
+        addVip: (state, action: PayloadAction<string>) => {
+            state.EventInfo.vip = action.payload
+        },
     }
 })
 
-export const { addSelectedEnd, addSelectedStart, addFilterEventCategory, addFilterEvent, addLatitudeXInfo, addLongitudeYInfo, addTitle, addEventStart, addEventEnd, addAdrees, addPlace, addPrice, addCategory, addEventInfo } = userSlice.actions
+export const { addVip, addSelectedEnd, addSelectedStart, addFilterEventCategory, addFilterEvent, addLatitudeXInfo, addLongitudeYInfo, addTitle, addEventStart, addEventEnd, addAdrees, addPlace, addPrice, addCategory, addEventInfo } = userSlice.actions
 
 export default userSlice.reducer

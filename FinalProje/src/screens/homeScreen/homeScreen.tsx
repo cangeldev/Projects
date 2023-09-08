@@ -14,7 +14,6 @@ export const HomeScreen = () => {
     const [displayedData, setDisplayedData] = useState([]);
     const dispatch = useDispatch();
 
-    // Redux state'lerini kullanarak filtreleri alıyoruz
     const filterText = useSelector((state: RootState) => state.users.EventInfo.filterEvent);
     const filterTextCategory = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory);
     const selectedStartDate = useSelector((state: RootState) => state.users.EventInfo.selectedStart);
@@ -115,6 +114,7 @@ export const HomeScreen = () => {
             latitudeX={item.latitudeX}
             longitudeY={item.longitudeY}
             visible={true}
+            vip={item.vip}
         />
     );
 

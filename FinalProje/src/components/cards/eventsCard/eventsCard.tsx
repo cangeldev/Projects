@@ -13,7 +13,8 @@ import {
     addLongitudeYInfo,
     addPlace,
     addPrice,
-    addTitle
+    addTitle,
+    addVip
 } from '../../../features/userSlice'
 
 interface IEventsCard {
@@ -29,8 +30,9 @@ interface IEventsCard {
     visible?: boolean
     disabled?: boolean
     posterImage: Image
+    vip: string
 }
-export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
+export const EventsCard: FC<IEventsCard> = ({ vip, latitudeX, longitudeY, title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
     const dispatch = useDispatch()
     const navigation = useNavigation<any>()
     const toggleButton = () => {
@@ -44,6 +46,7 @@ export const EventsCard: FC<IEventsCard> = ({ latitudeX, longitudeY, title, pric
         dispatch(addAdrees(adress))
         dispatch(addLatitudeXInfo(latitudeX))
         dispatch(addLongitudeYInfo(longitudeY))
+        dispatch(addVip(vip))
     }
     const formatDate = (dateString: any) => {
         const date = new Date(dateString)
