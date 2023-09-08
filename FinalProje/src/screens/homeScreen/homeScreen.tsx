@@ -1,33 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Pressable } from 'react-native';
-import IconF from 'react-native-vector-icons/FontAwesome5';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../features/store';
-import { CustomHeader, SlaytSlider } from '../../components';
-import { EventList } from '../../utils/helper';
-import { EventsCard } from '../../components/cards';
-import style from './style';
-import { FilterModal, HistoryEventsModal } from '../../components/modals';
+import React, { useState, useEffect } from 'react'
+import { View, Text, FlatList, Pressable } from 'react-native'
+import IconF from 'react-native-vector-icons/FontAwesome5'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../features/store'
+import { CustomHeader, SlaytSlider } from '../../components'
+import { EventList } from '../../utils/helper'
+import { EventsCard } from '../../components/cards'
+import style from './style'
+import { FilterModal, HistoryEventsModal } from '../../components/modals'
 
 export const HomeScreen = () => {
-    const currentDate = new Date();
-    const [displayedData, setDisplayedData] = useState([]);
-    const dispatch = useDispatch();
-
-    const filterText = useSelector((state: RootState) => state.users.EventInfo.filterEvent);
-    const filterTextCategory = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory);
-    const selectedStartDate = useSelector((state: RootState) => state.users.EventInfo.selectedStart);
-    const selectedEndDate = useSelector((state: RootState) => state.users.EventInfo.selectedEnd);
+    const currentDate = new Date()
+    const [displayedData, setDisplayedData] = useState([])
+    const filterText = useSelector((state: RootState) => state.users.EventInfo.filterEvent)
+    const filterTextCategory = useSelector((state: RootState) => state.users.EventInfo.filterEventCategory)
+    const selectedStartDate = useSelector((state: RootState) => state.users.EventInfo.selectedStart)
+    const selectedEndDate = useSelector((state: RootState) => state.users.EventInfo.selectedEnd)
+    const [isFilterButtonVisible, setIsFilterButtonVisible] = useState(false)
 
     const filterFutureEvents = (item: any) => {
-        const eventDate = new Date(item.eventStart);
-        return eventDate >= currentDate
+        const eventDate = new Date(item.eventStart)
+        return eventDate >= currentDate;
     }
     const futureEvents = EventList.filter(filterFutureEvents)
+
     useEffect(() => {
         let updatedData = EventList.filter((item) => {
-            const eventDate = new Date(item.eventStart);
-            return eventDate >= currentDate;
+            const eventDate = new Date(item.eventStart)
+            return eventDate >= currentDate
         });
 
         if (filterText) {
@@ -51,17 +51,23 @@ export const HomeScreen = () => {
                 );
             });
         }
+        if (filterText || filterTextCategory || (selectedStartDate && selectedEndDate)) {
+            setIsFilterButtonVisible(true);
+        }
+        else {
+            setIsFilterButtonVisible(false)
+        }
 
-        setDisplayedData(updatedData);
-    }, [filterText, filterTextCategory, selectedStartDate, selectedEndDate]);
+        setDisplayedData(updatedData)
+    }, [filterText, filterTextCategory, selectedStartDate, selectedEndDate])
 
-    const eventCount = displayedData.length;
-
+    const eventCount = displayedData.length
 
     const cleanFilterButton = () => {
-        console.log("first")
         setDisplayedData(futureEvents)
+        setIsFilterButtonVisible(false)
     };
+
     const [isFilterModalVisible, setIsFilterModalVisible] = useState(false)
     const toggleFilterModal = () => {
         setIsFilterModalVisible(!isFilterModalVisible)
@@ -83,23 +89,34 @@ export const HomeScreen = () => {
                 </Text>
 
                 <View style={{ flexDirection: 'row' }}>
-                    <Pressable onPress={cleanFilterButton}>
-                        <Text style={style.buttonFilterText}>Filtre Temizle</Text>
-                    </Pressable>
+                    {isFilterButtonVisible && (
+                        <Pressable onPress={cleanFilterButton}>
+                            <Text style={style.buttonFilterText}>
+                                Filtre Temizle
+                            </Text>
+                        </Pressable>
+                    )}
                     <Pressable onPress={toggleHistoryModal}>
-                        <IconF name="history" style={style.historyButton} />
+                        <IconF
+                            name="history"
+                            style={style.historyButton}
+                        />
                     </Pressable>
                     <Pressable onPress={toggleFilterModal}>
-                        <Text style={style.buttonText}>Filtre</Text>
+                        <Text style={style.buttonText}>
+                            Filtre
+                        </Text>
                     </Pressable>
                 </View>
             </View>
             <View style={style.sliderView}>
                 <SlaytSlider />
             </View>
-            <Text style={style.title}>Güncel Etkinlikler</Text>
+            <Text style={style.title}>
+                Güncel Etkinlikler
+            </Text>
         </>
-    );
+    )
 
     const renderEvent = ({ item }) => (
         <EventsCard
@@ -116,7 +133,7 @@ export const HomeScreen = () => {
             visible={true}
             vip={item.vip}
         />
-    );
+    )
 
     return (
         <View style={style.container}>

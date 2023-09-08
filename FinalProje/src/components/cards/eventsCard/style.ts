@@ -23,7 +23,6 @@ export default StyleSheet.create({
         width: "100%",
         height: "100%",
         resizeMode: "stretch"
-
     },
     infoView: {
         flexDirection: "row",
@@ -52,7 +51,7 @@ export default StyleSheet.create({
     adress: {
         color: colors.placeholderTextColor,
         width: windowWidth / 1.6,
-        paddingRight:6
+        paddingRight: 6
     },
     button: {
         backgroundColor: colors.headerButtonColor,
@@ -64,7 +63,7 @@ export default StyleSheet.create({
     },
     infoIcon: {
         fontSize: 20,
-        color: colors.black,
+        color: colors.black
     },
     infoText: {
         color: colors.black,
@@ -75,7 +74,7 @@ export default StyleSheet.create({
     infoDateView: {
         flexDirection: "row",
         alignItems: "center",
-        marginHorizontal:15,
-        marginTop:6
-    },
+        marginHorizontal: 15,
+        marginTop: 6
+    }
 })

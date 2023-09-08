@@ -1,5 +1,5 @@
 import { View, Modal, Pressable, } from 'react-native'
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import style from './style'
 import IconI from 'react-native-vector-icons/AntDesign'
 import { DateSelect } from '../../dateSelect'
@@ -11,7 +11,6 @@ interface ISelectDateModal {
 }
 
 export const SelectDateModal: FC<ISelectDateModal> = ({ visibleModal, closeModal }) => {
-    
     return (
         <Modal
             statusBarTranslucent={true}
@@ -36,9 +35,11 @@ export const SelectDateModal: FC<ISelectDateModal> = ({ visibleModal, closeModal
                         title='Bitiş Tarihi Seçiniz:'
                         start={true}
                     />
-
                     <View style={{ marginTop: 10 }}>
-                        <CustomButton title='Onayla' onClick={closeModal} />
+                        <CustomButton
+                            title='Onayla'
+                            onClick={closeModal}
+                        />
                     </View>
                 </View>
             </View>

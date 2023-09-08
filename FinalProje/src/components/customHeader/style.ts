@@ -3,7 +3,7 @@ import colors from "../../assets/colors/colors";
 export default StyleSheet.create({
 
     container: {
-        paddingTop: 5,
+        paddingTop: 5
     },
     txtInputView: {
         justifyContent: "center",
@@ -20,6 +20,5 @@ export default StyleSheet.create({
         position: "absolute",
         right: 26,
         color: colors.txtInputIconColor
-    },
-
+    }
 })

@@ -9,7 +9,7 @@ export const EventList = [
         eventEnd: "2023-09-17T19:00:00",
         adress: "Odunluk Mah, Akpınar Cd. No:8, 16110 NİLÜFER / Bursa",
         price: "246,00 TL",
-        vip:"346,00 TL",
+        vip: "346,00 TL",
         place: "BAOB Sahne",
         category: "Tiyatro Gösterileri",
         latitudeX: 40.208880317416266,
@@ -38,7 +38,7 @@ export const EventList = [
         eventEnd: "2023-09-21T00:00:00",
         adress: "Barbaros Mahallesi Kızılbegonya Sokak, 34746 ATAŞEHİR / İstanbul",
         price: "220,00 TL",
-        vip:"320,00 TL",
+        vip: "320,00 TL",
         place: "Duru Tiyatro - Watergarden Performans Merkezi",
         category: "Tiyatro Gösterileri",
         latitudeX: 41.00208343740773,
@@ -81,7 +81,7 @@ export const EventList = [
         eventEnd: "2023-09-05T00:00:00",
         adress: "Vişnezade, Süleyman Seba Caddesi, No:22, 34357 BEŞİKTAŞ / İstanbu",
         price: "100,00 TL",
-        vip:"200,00 TL",
+        vip: "200,00 TL",
         place: "W Istanbul",
         category: "Eğitim & Fazlası",
         latitudeX: 41.04253336180999,
@@ -138,7 +138,7 @@ export const EventList = [
         eventEnd: "2023-10-05T00:00:00",
         adress: "Taşkışla Cad. HARBİYE / İstanbul",
         price: "300,00 TL",
-        vip:"500,00 TL",
+        vip: "500,00 TL",
         place: "İstanbul Harbiye Cemil Topuzlu Açıkhava Tiyatrosu",
         category: "Konser Etkinlikleri",
         latitudeX: 41.04434223876437,
@@ -153,7 +153,7 @@ export const EventList = [
         eventEnd: "2023-09-08T00:00:00",
         adress: "Vadistanbul, Ayazağa Mahallesi. Cendere Caddesi 1. Apt No:109 İç Kapı No:254 AYAZAĞA / İstanbul",
         price: "100,00 TL",
-        vip:"200,00 TL",
+        vip: "200,00 TL",
         place: "Turkcell Vadi",
         category: "Konser Etkinlikleri",
         latitudeX: 41.10795168132644,
@@ -168,7 +168,7 @@ export const EventList = [
         eventEnd: "2023-10-04T20:00:00",
         adress: "Taşkışla Cad. HARBİYE / İstanbul",
         price: "300,00 TL",
-        vip:"400,00 TL",
+        vip: "400,00 TL",
         place: "İstanbul Harbiye Cemil Topuzlu Açıkhava Tiyatrosu",
         category: "Konser Etkinlikleri",
         latitudeX: 41.04434223876437,
@@ -183,14 +183,13 @@ export const EventList = [
         eventEnd: "2023-09-09T22:00:00",
         adress: "Osmanağa, Serasker Cd. no:61/4, 34714 KADIKÖY / İstanbul",
         price: "100,00 TL",
-        vip:"200,00 TL",
+        vip: "200,00 TL",
         place: "Ankaworkshop",
         category: "Resim Sergisi",
         latitudeX: 40.989672941589646,
         longitudeY: 29.028047696251313,
         eventInfo: "Bu workshop'umuzda daha önce resim çizmemiş, elinize hiç fırça almamış olabilirsiniz. Hiç önemli değil, eğitmenlerimiz eşliğinde kendi sanat eserinizi yapmanız için sizleri bekliyoruz. Üstelik tüm malzemeler ve müzikler bizden."
     },
-
     {
         id: 14,
         posterImage: Picasso,
@@ -290,6 +289,7 @@ export const EventList = [
         eventInfo: "Alis ailesiyle sürekli pikniğe gider ve orada çiçek toplamaya bayılırdı. Günlerden bir gün Alis ormanda yine çiçek toplarken bir tavşan gördü. Ama bir gariplik vardı. Bu tavşan hem insan gibi giyinmiş hem de konuşuyordu. Alis gördüğü şeyin kendisine hayal gücünün bir oyunu olduğunu zannetti. Ama gördükleri bir hayal değildi. Beyaz Tavşan’ı takip etmesiyle kendini Harikalar Diyarı’nda buldu. Ama asıl tehlike pek yakınındaydı. Kırmızı Kraliçe uzun zamandır Alis’i bekliyordu."
     }
 ]
+
 export const EventInfoRules = [
     {
         id: 1,
@@ -318,9 +318,9 @@ export const EventInfoRules = [
     {
         id: 7,
         text: " - Her yaştan çocuk bilete tabidir."
-    },
-
+    }
 ]
+
 export const PopularEvents = [
     {
         id: 1,
@@ -332,11 +332,10 @@ export const PopularEvents = [
     },
     {
         id: 3,
-        img: Tilbe
+        img: Yoga
     },
     {
         id: 4,
-        img: Bulent
-    },
-
+        img: Alis
+    }
 ]

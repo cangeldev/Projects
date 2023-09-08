@@ -15,7 +15,7 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         borderRadius: 3,
         width: windowWidth / 1.1,
-        height: windowHeight / 1.2,
+        height: windowHeight / 1.2
     },
     closeIcon: {
         fontSize: 24,
@@ -23,6 +23,5 @@ export default StyleSheet.create({
         position: "absolute",
         right: 15,
         top: 10
-
-    },
+    }
 })

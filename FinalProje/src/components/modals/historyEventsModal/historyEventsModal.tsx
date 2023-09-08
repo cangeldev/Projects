@@ -23,11 +23,8 @@ export const HistoryEventsModal: FC<IHistoryEventsModal> = ({ visibleModal, clos
             transparent={true}
             visible={visibleModal}
             onRequestClose={closeModal}>
-
             <View style={style.container}>
-
                 <View style={style.innerContainer}>
-
                     <Text style={style.title}>
                         Geçmiş Etkinliklerimiz
                     </Text>

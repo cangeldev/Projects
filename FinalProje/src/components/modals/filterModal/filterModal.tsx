@@ -34,5 +34,5 @@ export const FilterModal: FC<IFilterModal> = ({ visibleModal, closeModal }) => {
                 </View>
             </View>
         </Modal>
-    );
-};
+    )
+}

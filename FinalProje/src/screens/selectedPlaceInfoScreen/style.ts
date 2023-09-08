@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native"
 import colors from "../../assets/colors/colors"
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -9,7 +10,7 @@ export default StyleSheet.create({
     },
     title: {
         color: colors.headerButtonColor,
-        fontSize:18,
+        fontSize: 18
     },
     innerContainer: {
         backgroundColor: colors.white,
@@ -18,17 +19,17 @@ export default StyleSheet.create({
     },
     address: {
         color: colors.black,
-        fontSize:13
+        fontSize: 13
     },
     divider: {
         borderBottomColor: colors.dividerColor,
         borderBottomWidth: 1.5,
         marginVertical: 10
     },
-    historyEventView:{
+    historyEventView: {
         backgroundColor: colors.white,
         elevation: 3,
         padding: 10,
-        marginTop:25
+        marginTop: 25
     }
 })

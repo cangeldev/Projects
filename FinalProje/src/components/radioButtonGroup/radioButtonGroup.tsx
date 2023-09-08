@@ -8,7 +8,7 @@ import { addFilterEventCategory } from '../../features/userSlice'
 
 export const RadioButtonGroup = () => {
     const dispatch = useDispatch()
-   
+
     const radioButtons: RadioButtonProps[] = useMemo(() => ([
         {
             id: '1',
@@ -112,7 +112,7 @@ export const RadioButtonGroup = () => {
                 onPress={setSelectedId}
                 selectedId={selectedId}
             />
-            <Text style={{color:"white"}}>
+            <Text style={{ color: "white" }}>
                 Seçilen: {getSelectedLabel()}
             </Text>
         </View>

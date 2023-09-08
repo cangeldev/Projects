@@ -18,7 +18,7 @@ interface UserState {
         selectedStart: string
         selectedEnd: string,
         vip: string
-    },
+    }
 }
 
 const initialState: UserState = {
@@ -45,7 +45,6 @@ export const userSlice = createSlice({
     name: 'userInfo',
     initialState,
     reducers: {
-
         addTitle: (state, action: PayloadAction<string>) => {
             state.EventInfo.title = action.payload
         },
@@ -90,10 +89,9 @@ export const userSlice = createSlice({
         },
         addVip: (state, action: PayloadAction<string>) => {
             state.EventInfo.vip = action.payload
-        },
+        }
     }
 })
 
 export const { addVip, addSelectedEnd, addSelectedStart, addFilterEventCategory, addFilterEvent, addLatitudeXInfo, addLongitudeYInfo, addTitle, addEventStart, addEventEnd, addAdrees, addPlace, addPrice, addCategory, addEventInfo } = userSlice.actions
-
 export default userSlice.reducer

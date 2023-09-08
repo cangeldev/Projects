@@ -30,7 +30,7 @@ interface IEventsCard {
     visible?: boolean
     disabled?: boolean
     posterImage: Image
-    vip: string
+    vip?: string
 }
 export const EventsCard: FC<IEventsCard> = ({ vip, latitudeX, longitudeY, title, price, place, eventStart, eventEnd, adress, posterImage, disabled, visible, eventInfo }) => {
     const dispatch = useDispatch()

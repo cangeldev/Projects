@@ -11,12 +11,11 @@ export default StyleSheet.create({
         color: "black",
         fontSize: 25
     },
-    sliderView:
-    {
+    sliderView: {
         marginHorizontal: 26,
         overflow: 'hidden',
         borderRadius: 6,
-        marginBottom: 5,
+        marginBottom: 5
     },
     filterView: {
         flexDirection: "row",
@@ -40,9 +39,9 @@ export default StyleSheet.create({
         textAlign: "center",
         textAlignVertical: "center"
     },
-    buttonFilterText:{
+    buttonFilterText: {
         borderWidth: 2.5,
-        borderColor:colors.headerButtonColor,
+        borderColor: colors.headerButtonColor,
         padding: 5,
         borderRadius: 5,
         paddingHorizontal: 5,
@@ -51,19 +50,19 @@ export default StyleSheet.create({
         color: colors.white,
         textAlign: "center",
         textAlignVertical: "center",
-        marginLeft:-10,
-        marginRight:10
+        marginLeft: -10,
+        marginRight: 10
     },
     historyButton: {
         borderWidth: 2.5,
         padding: 5,
         borderRadius: 5,
-        paddingHorizontal: 8,      
+        paddingHorizontal: 8,
         borderColor: colors.headerButtonColor,
         color: colors.headerButtonColor,
         textAlign: "center",
         textAlignVertical: "center",
-        fontSize:18,
-        marginRight:10,
-    },
+        fontSize: 18,
+        marginRight: 10
+    }
 })

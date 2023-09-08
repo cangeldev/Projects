@@ -11,17 +11,16 @@ export default StyleSheet.create({
         marginTop: 10,
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: "row"
+        flexDirection: "row",
+        width: "100%",
     },
     mapButtonText: {
         fontSize: 16,
-
         color: colors.white
     },
     mapIcon: {
         fontSize: 20,
         color: colors.white,
-        marginRight:10
-    },
-
+        marginRight: 10
+    }
 })

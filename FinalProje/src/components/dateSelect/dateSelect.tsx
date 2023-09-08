@@ -10,6 +10,7 @@ interface IDateSelect {
     start: boolean
     title: string
 }
+
 export const DateSelect: FC<IDateSelect> = ({ title, start }) => {
     const dispatch = useDispatch()
     const [date, setDate] = useState(new Date())
@@ -47,7 +48,6 @@ export const DateSelect: FC<IDateSelect> = ({ title, start }) => {
                     const formattedDate = selectedDate.toISOString().substring(0, 19);
                     setDate(selectedDate)
                     start == true ? dispatch(addSelectedStart(formattedDate)) : dispatch(addSelectedEnd(formattedDate))
-                    console.log(formattedDate);
                 }}
                 onCancel={() => {
                     setOpen(false)
@@ -79,7 +79,6 @@ export const DateSelect: FC<IDateSelect> = ({ title, start }) => {
                     />
                 </View>
             </TouchableOpacity>
-
         </>
     )
 }

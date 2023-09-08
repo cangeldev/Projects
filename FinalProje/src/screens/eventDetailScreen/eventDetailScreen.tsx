@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native'
+import { View, Text, Image, ScrollView, FlatList } from 'react-native'
 import React, { FC, useState } from 'react'
 import style from './style'
 import { useNavigation, useRoute } from '@react-navigation/native'
@@ -13,7 +13,7 @@ import { MapModal } from '../../components/modals'
 import { CustomButton } from '../../components'
 
 interface IEventDetailScreen {
-    posterImage: Image,
+    posterImage: Image
 }
 
 export const EventDetailScreen: FC = () => {
@@ -35,8 +35,8 @@ export const EventDetailScreen: FC = () => {
         }
 
         Share.open(options)
-            .then((res) => console.log(res))
-            .catch((err) => console.log(err));
+            .then((res) => null)
+            .catch((err) => null);
     }
     const formatDate = (dateString: any) => {
         const date = new Date(dateString)
@@ -44,13 +44,13 @@ export const EventDetailScreen: FC = () => {
         return date.toLocaleDateString('tr-TR', options)
     }
     return (
-
         <View style={style.container}>
             <ScrollView>
                 <View style={style.imageView}>
-                    <Image source={posterImage as any} style={
-                        style.image
-                    } />
+                    <Image
+                        source={posterImage as any}
+                        style={style.image}
+                    />
                 </View>
                 <IconI
                     onPress={() => navigation.goBack()}
@@ -85,17 +85,20 @@ export const EventDetailScreen: FC = () => {
                         </Text>
                     </View>
                     <View style={style.mapView}>
-                        <CustomButton
-                            icon='search'
-                            title='Mekanı İncele'
-                            onClick={() => navigation.navigate(SelectedPlaceInfoScreen)}
-                        />
-                        <CustomButton
-                            icon='map-marker'
-                            title='Konumu'
-                            onClick={toggleMapModal}
-                        />
-
+                        <View style={style.buttonView}>
+                            <CustomButton
+                                icon='search'
+                                title='Mekanı İncele'
+                                onClick={() => navigation.navigate(SelectedPlaceInfoScreen)}
+                            />
+                        </View>
+                        <View style={style.buttonView}>
+                            <CustomButton
+                                icon='map-marker'
+                                title='Konumu'
+                                onClick={toggleMapModal}
+                            />
+                        </View>
                     </View>
                 </View>
                 <View style={style.divider} />
@@ -122,14 +125,16 @@ export const EventDetailScreen: FC = () => {
                 </View>
                 <View style={style.paddingView} />
             </ScrollView>
-            <TouchableOpacity onPress={() => navigation.navigate("PaymentScreen")}>
-                <Text style={style.ticketButton}>
-                    Bilet Satın Al
-                </Text>
-            </TouchableOpacity>
+            <View style={style.customButtonView}>
+                <CustomButton
+                    title=' Bilet Satın Al'
+                    onClick={() => navigation.navigate("PaymentScreen")}
+                />
+            </View>
             <MapModal
                 visibleModal={isMapModalVisible}
-                closeModal={toggleMapModal} />
+                closeModal={toggleMapModal}
+            />
         </View>
     );
 }

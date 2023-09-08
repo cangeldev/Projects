@@ -1,6 +1,8 @@
 import { StyleSheet, Dimensions } from "react-native"
 import colors from "../../assets/colors/colors"
+
 const windowHeight = Dimensions.get('window').height
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -69,7 +71,6 @@ export default StyleSheet.create({
     mapButtonText: {
         marginLeft: 10,
         fontSize: 16,
-
         color: colors.white
     },
     mapIcon: {
@@ -80,33 +81,25 @@ export default StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-around"
     },
-    ticketButton: {
-        fontSize: 17,
-        backgroundColor: colors.headerButtonColor,
-        paddingHorizontal: "32%",
-        paddingVertical: 10,
-        textAlign: "center",
-        marginHorizontal: 15,
-        color: colors.white,
-        fontWeight: "600",
-        borderRadius: 20,
-        position: "absolute",
-        bottom: 0,
-        alignSelf: "center",
-        marginBottom: 10,
-    },
     paddingView: {
         paddingBottom: 60
     },
-    imageView: { width: "100%", height: windowHeight / 2.3, backgroundColor: "red" },
-    image:{
+    imageView: {
+        width: "100%",
+        height: windowHeight / 2.3
+    },
+    image: {
         width: "100%",
         height: "100%",
         resizeMode: "stretch"
-
+    },
+    buttonView: {
+        marginHorizontal: "23%"
+    },
+    customButtonView: {
+        position: "absolute",
+        bottom: 10,
+        alignSelf: "center",
+        width: "85%"
     }
-
-
-
-
 })

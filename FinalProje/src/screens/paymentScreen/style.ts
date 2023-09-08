@@ -4,7 +4,7 @@ import colors from '../../assets/colors/colors'
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white,
+        backgroundColor: colors.white
     },
     cardContainer: {
         alignItems: 'center',
@@ -13,15 +13,14 @@ export default StyleSheet.create({
     },
     card: {
         width: "90%",
-        height: 200,
+        height: 200
     },
     cardImage: {
         width: "100%",
         height: "100%",
         borderRadius: 10,
-        overflow: "hidden",
+        overflow: "hidden"
     },
-
     infoView: {
         flex: 1,
         flexDirection: "row",
@@ -34,7 +33,7 @@ export default StyleSheet.create({
     infoInnerView: {
         flex: 0.5,
         overflow: "hidden",
-      justifyContent:"space-evenly",
+        justifyContent: "space-evenly",
         paddingVertical: 5
     },
     cvcText: {
@@ -76,28 +75,31 @@ export default StyleSheet.create({
         color: colors.white,
         fontSize: 12
     },
-    vipText:{
+    vipText: {
         borderRadius: 6,
         backgroundColor: colors.white,
         elevation: 3,
         paddingHorizontal: 10,
         paddingVertical: 8,
-        marginTop:10,
-        marginHorizontal:20,
-        color:colors.black,
-        fontWeight:"600"
+        marginTop: 10,
+        marginHorizontal: 20,
+        color: colors.black,
+        fontWeight: "600"
     },
-    vipIconFalse:{
-        fontSize:22,
-        position:"absolute",
-        right:28,
-        top:17,        
+    vipIconFalse: {
+        fontSize: 22,
+        position: "absolute",
+        right: 28,
+        top: 17
     },
-    vipIconTrue:{
-        fontSize:22,
-        position:"absolute",
-        right:28,
-        top:17, 
-        color:colors.red       
+    vipIconTrue: {
+        fontSize: 22,
+        position: "absolute",
+        right: 28,
+        top: 17,
+        color: colors.red
+    },
+    buttonView: {
+        marginHorizontal: 20
     }
 })

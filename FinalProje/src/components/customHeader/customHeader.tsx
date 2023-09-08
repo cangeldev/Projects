@@ -8,10 +8,11 @@ import { SelectDateModal } from '../modals'
 
 export const CustomHeader = () => {
     const [isSelectDateModalVisible, setIsSelectDateModalVisible] = useState(false)
+
     const toggleDateModal = () => {
         setIsSelectDateModalVisible(!isSelectDateModalVisible)
-
     }
+
     return (
         <View style={style.container}>
             <SelectDateModal

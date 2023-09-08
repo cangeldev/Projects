@@ -8,6 +8,7 @@ import colors from '../../assets/colors/colors'
 import { CardBack, CardFront } from '../../assets'
 import { RootState } from '../../features/store'
 import IconF from 'react-native-vector-icons/Fontisto'
+import { useNavigation } from '@react-navigation/native'
 
 export const PaymentScreen = () => {
     const [isFront, setIsFront] = useState(true)
@@ -18,7 +19,7 @@ export const PaymentScreen = () => {
     const flipRef = useRef(null)
     const { place, eventStart, vip, title, price } = useSelector((state: RootState) => state.users.EventInfo)
     const [vipSeat, SetVip] = useState(false)
-
+    const navigation = useNavigation()
     const formatDate = (dateString: any) => {
         const date = new Date(dateString)
         const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' }
@@ -29,29 +30,29 @@ export const PaymentScreen = () => {
         if (flipRef.current) {
             flipRef.current.flipInY(700)
         }
-    };
+    }
     const handleNameChange = (inputText: string) => {
         setName(inputText);
         setIsFront(true)
-    };
+    }
     const handleCardNoChange = (inputText: string) => {
         setIsFront(true)
         if (/^\d*$/.test(inputText)) {
             const formattedNumber = inputText.replace(/\d{4}(?=\d)/g, '$& ');
             setcardNumber(formattedNumber);
         }
-    };
+    }
     const handleCvcNoChange = (inputText: string) => {
-        setCvcNo(inputText);
+        setCvcNo(inputText)
         setIsFront(false)
-    };
+    }
     const handleValidThruNoChange = (inputText: string) => {
         setIsFront(true)
         if (/^\d*$/.test(inputText)) {
             const formattedNumber = inputText.replace(/\d{2}(?=\d)/g, '$&/');
             setValidThruNo(formattedNumber);
         }
-    };
+    }
     return (
         <View style={style.container}>
             <StatusBar barStyle={"dark-content"}
@@ -115,9 +116,7 @@ export const PaymentScreen = () => {
                     />
                     <CustomTextView
                         title='Fiyatı'
-                        // text={price}
                         text={vip != undefined && vipSeat == true ? vip : price}
-
                     />
                 </View>
             </View>
@@ -160,15 +159,17 @@ export const PaymentScreen = () => {
                 title='CVC'
                 placeHolder='***'
             />
-            <CustomButton
-                title='Onayla'
-                onClick={() => {
-                    Alert.alert('Ödeme İşleminiz Başarılı', 'İyi yolculuklar Dileriz.', [
-                        { text: 'Bitir', onPress: () => null },
-                    ]);
-                }}
-            />
+            <View style={style.buttonView}>
+                <CustomButton
+                    title='Onayla'
+                    onClick={() => {
+                        Alert.alert('Ödeme İşleminiz Başarılı', 'İyi eğlenceler Dileriz.', [
+                            { text: 'Bitir', onPress: () => navigation.navigate("HomeScreen") }
+                        ])
+                    }}
+                />
+            </View>
         </View >
-    );
-};
+    )
+}
 

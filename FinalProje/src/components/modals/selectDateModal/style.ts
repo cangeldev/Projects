@@ -10,14 +10,14 @@ export default StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: 'rgba(52, 52, 52, 0.7)',
-        paddingTop:60
+        paddingTop: 60
     },
     innerContainer: {
         backgroundColor: colors.white,
         borderRadius: 5,
         width: windowWidth / 1.4,
         height: windowHeight / 2.2,
-        justifyContent:"center"
+        justifyContent: "center"
     },
     closeIcon: {
         fontSize: 24,
@@ -32,5 +32,5 @@ export default StyleSheet.create({
         fontWeight: "bold",
         marginVertical: 10,
         paddingHorizontal: 15
-    } 
+    }
 })
