@@ -3,7 +3,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import colors from '../assets/colors/colors'
-import { EventDetailScreen, HomeScreen, SelectedPlaceInfoScreen } from '../screens'
+import { EventDetailScreen, HomeScreen, PaymentScreen, SelectedPlaceInfoScreen } from '../screens'
 import IconE from 'react-native-vector-icons/Entypo'
 import { useSelector } from 'react-redux'
 import { RootState } from '../features/store'
@@ -65,6 +65,15 @@ export const Container = () => {
                     }}
                     name='SelectedPlaceInfoScreen'
                     component={SelectedPlaceInfoScreen}
+                />
+                <Stack.Screen
+                    options={{
+                        statusBarColor: colors.white,
+                        statusBarStyle: "dark",
+                        headerShown: false
+                    }}
+                    name='PaymentScreen'
+                    component={PaymentScreen}
                 />
             </Stack.Navigator>
         </NavigationContainer>

@@ -12,7 +12,6 @@ import { SelectedPlaceInfoScreen } from '../selectedPlaceInfoScreen'
 import { MapModal } from '../../components/modals'
 import { CustomButton } from '../../components'
 
-
 interface IEventDetailScreen {
     posterImage: Image,
 }
@@ -123,7 +122,7 @@ export const EventDetailScreen: FC = () => {
                 </View>
                 <View style={style.paddingView} />
             </ScrollView>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("PaymentScreen")}>
                 <Text style={style.ticketButton}>
                     Bilet Satın Al
                 </Text>
