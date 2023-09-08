@@ -15,3 +15,5 @@ export const Yoga = require("./images/yoga.jpg");
 export const Picasso = require("./images/picasso.png");
 export const Kyb = require("./images/kyb.png");
 export const Alis = require("./images/alis.jpg");
+export const CardBack = require("./images/card-back.png");
+export const CardFront = require("./images/card-front.png");
