@@ -35,7 +35,7 @@ export const SelectDateModal: FC<ISelectDateModal> = ({ visibleModal, closeModal
                         title='Bitiş Tarihi Seçiniz:'
                         start={true}
                     />
-                    <View style={{ marginTop: 10 }}>
+                    <View style={style.selectDateButton}>
                         <CustomButton
                             title='Onayla'
                             onClick={closeModal}

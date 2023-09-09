@@ -32,5 +32,9 @@ export default StyleSheet.create({
         fontWeight: "bold",
         marginVertical: 10,
         paddingHorizontal: 15
+    },
+    selectDateButton: {
+        marginTop: 10,
+        marginHorizontal: 40
     }
 })
